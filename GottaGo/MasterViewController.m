@@ -14,14 +14,14 @@
 
 @interface MasterViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
-- (IBAction)listViewButton:(id)sender;
 - (IBAction)gottaGoButton:(id)sender;
+- (IBAction)listView:(id)sender;
 
 //array of pins
 @property NSMutableArray *pinArray;
 
 //distance sorted array
-@property NSMutableArray *sortedArray; 
+@property NSArray *sortedArray;
 
 //getting the user's current location
 @property CLLocationManager *locationManager;
@@ -111,6 +111,7 @@
 //    //add all pins to the array
 //    _pinArray = [[NSMutableArray alloc] initWithArray:@[pin1, pin2, pin3]];
     self.pinArray = [[NSMutableArray alloc] initWithArray:storeAllArray];
+    self.sortedArray = [[NSArray alloc] init];
     
 }
 
@@ -119,10 +120,6 @@
     [self showPins];
 }
 
-- (IBAction)listViewButton:(id)sender {
-    //segue to the table view, need to configure the prepare for segue to pass objects over. Will probably run code to sort the pins like in gotta go button
-    [self performSegueWithIdentifier:@"showList" sender:sender];
-}
 
 - (IBAction)gottaGoButton:(id)sender {
     
@@ -151,6 +148,29 @@
     MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
     [mapItem setName:@"Closest Washroom"];
     [mapItem openInMapsWithLaunchOptions:nil];
+}
+
+- (IBAction)listView:(id)sender {
+    
+    CLLocation *userLocation = self.masterMapView.userLocation.location;
+    
+    NSMutableDictionary *washroomObjects = [NSMutableDictionary dictionary];
+    
+    for (Pin *object in self.pinArray) {
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:object.latitude longitude:object.longitude];
+        CLLocationDistance distance = [loc distanceFromLocation:userLocation];
+        
+        [washroomObjects setObject:object forKey:@(distance)];
+    }
+    
+    NSArray *sortedKeys = [[washroomObjects allKeys] sortedArrayUsingSelector:@selector(compare:)];
+        
+    NSArray *washrooms = [washroomObjects objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
+    
+    self.sortedArray = washrooms;
+    
+    [self performSegueWithIdentifier:@"showList" sender:sender];
+    
 }
 
 -(void)showPins {
@@ -218,7 +238,7 @@
     
     if ([[segue identifier] isEqualToString:@"showList"]) {
         WashroomTableViewController *washroomTableVC = segue.destinationViewController;
-        washroomTableVC.washrooms = self.pinArray;
+        washroomTableVC.washrooms = self.sortedArray;
         
         //do I pass on the array of pins?
         }

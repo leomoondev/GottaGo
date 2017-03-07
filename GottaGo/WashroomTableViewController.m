@@ -67,6 +67,7 @@
         
         DetailViewController *detailVC = (DetailViewController *)[segue destinationViewController];
         //how to set the items? Should I make a detail item?
+        //need to do the same as what you did in the master view controller and pass the info from selected to detial
         
     }
 }

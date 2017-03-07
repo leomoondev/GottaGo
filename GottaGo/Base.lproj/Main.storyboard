@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nwx-VA-3tC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nwx-VA-3tC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,8 +40,7 @@
                     <navigationItem key="navigationItem" id="Vn7-xV-ap7">
                         <barButtonItem key="leftBarButtonItem" title="List" id="xHk-fb-6oj">
                             <connections>
-                                <action selector="listViewButton:" destination="HUq-ch-hcx" id="wRp-Yo-uAo"/>
-                                <segue destination="Lxd-7O-Tme" kind="show" identifier="showList" id="v8E-OS-CJU"/>
+                                <action selector="listView:" destination="HUq-ch-hcx" id="y3H-ub-uub"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Gotta Go!" id="PS1-OH-cXg">
@@ -53,6 +52,7 @@
                     <connections>
                         <outlet property="masterMapView" destination="ufZ-4g-pKZ" id="rrL-V4-JHn"/>
                         <segue destination="5WR-SV-c5x" kind="show" identifier="showDetail" id="PvD-kA-Uui"/>
+                        <segue destination="Lxd-7O-Tme" kind="show" identifier="showList" id="mrm-NT-4fh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3i2-Aw-P9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bgj-Qm-aTP" id="tal-Jc-PYL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dist." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="929-TM-JaV">
@@ -89,7 +89,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-td-uXa">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type of Washroom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-td-uXa">
                                             <rect key="frame" x="75" y="22" width="230" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -106,9 +106,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="addressLabel" destination="yX3-td-uXa" id="xWa-dN-MRy"/>
                                     <outlet property="distanceLabel" destination="929-TM-JaV" id="gyN-rk-6jo"/>
                                     <outlet property="nameLabel" destination="NmL-vU-QmN" id="9PN-5p-Vfs"/>
+                                    <outlet property="subtitleLabel" destination="yX3-td-uXa" id="My9-ID-Uaw"/>
                                     <outlet property="wheelchairAccessLabel" destination="KRY-Ru-Aup" id="Wne-cQ-mDf"/>
                                 </connections>
                             </tableViewCell>

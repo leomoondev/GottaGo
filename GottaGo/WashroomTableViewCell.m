@@ -19,7 +19,7 @@
 
 -(void)setup {
     self.nameLabel.text = self.pin.name;
-    self.addressLabel.text = self.pin.address;
+    self.subtitleLabel.text = self.pin.type;
     
     //need to make this into a bool which shows a wheel chair icon or not
     self.wheelchairAccessLabel.text = [NSString stringWithFormat:@"♿️: %@", self.pin.wheelchairAccess];
