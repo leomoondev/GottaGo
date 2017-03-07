@@ -42,14 +42,72 @@
     [self.locationManager startUpdatingLocation];
     self.masterMapView.showsUserLocation = YES;
     
-    //hard coded 3 example pins, will replace these with info from database
-    Pin *pin1 = [[Pin alloc] initWithName:@"Adanac Park" andWithAddress:@"1025 Boundary Road" andWithType:@"Washroom in Park" andWithLocation:@"East side, fieldhouse" andWithSummerHours:@"Dawn to Dusk" andWithWinterHours:@"Dawn to Dusk" andWithWheelchairAccess:@"No" andWithMaintainer:@"Parks" andWithLatitude:49.27588097 andWithLongitude:-123.024072];
-    Pin *pin2 = [[Pin alloc] initWithName:@"Andy Livingstone Park" andWithAddress:@"89 Expo Boulevard" andWithType:@"Washroom in Park" andWithLocation:@"South side, fieldhouse" andWithSummerHours:@"12:00 pm - 4:00 pm" andWithWinterHours:@"12:00 pm - 4:00 pm" andWithWheelchairAccess:@"No" andWithMaintainer:@"Parks" andWithLatitude:49.27782097 andWithLongitude:-123.103599];
-    Pin *pin3 = [[Pin alloc] initWithName:@"Balaclava Park" andWithAddress:@"4594 Balaclava Street" andWithType:@"Washroom in Park" andWithLocation:@"Central, field house" andWithSummerHours:@"Dawn to Dusk" andWithWinterHours:@"Dawn to Dusk" andWithWheelchairAccess:@"No" andWithMaintainer:@"Parks" andWithLatitude:49.24523399 andWithLongitude:-123.1754609];
     
-    //add all pins to the array
-    _pinArray = [[NSMutableArray alloc] initWithArray:@[pin1, pin2, pin3]];
+    NSString *stringURL2 = @"ftp://webftp.vancouver.ca/OpenData/csv/public_washrooms.csv";
+
+    NSURL  *url2 = [NSURL URLWithString:stringURL2];
+    NSData *urlData2 = [NSData dataWithContentsOfURL:url2];
+    NSString *csvResponseString2 = [[NSString alloc] initWithData:urlData2   encoding:NSUTF8StringEncoding];
+    
+    NSArray *locations = [csvResponseString2 componentsSeparatedByString:@"\n"];
+    
+    NSMutableArray *storeAllArray = [NSMutableArray array];
+    NSDictionary *dict = [NSMutableDictionary dictionary];
+    
+    for (int i = 0; i < locations.count-1; i++) {
+        NSString *location = [locations objectAtIndex:i];
         
+        
+        NSArray *components = [location componentsSeparatedByString:@","];
+        
+        NSString *pId =  components[0];
+        NSString *pName = components[1];
+        NSString *pAddress = components[2];
+        NSString *pType = components[3];
+        //NSString *pLocation = components[4];
+        NSString *pSummerHours = components[components.count-7];
+        NSString *pWinterHours = components[components.count-6];
+        NSString *pWheelchair = components[components.count-5];
+        //NSString *pNote = components[8];
+        double latitude   = [components[components.count-3] doubleValue];
+        double longitude  = [components[components.count-2] doubleValue];
+       // NSString *pLatitude = components[components.count-3];
+      //  NSString *pLongtitude = components[components.count-2];
+        //NSString *pMaintainer = components[11];
+        
+        
+        dict = @{@"PRIMARYIND": pId,
+                 @"NAME": pName,
+                 @"ADDRESS": pAddress,
+                 @"TYPE": pType,
+                 @"NAME": pName,
+                 @"SUMMER_HOURS": pSummerHours,
+                 @"WINTER_HOURS": pWinterHours,
+                 @"WHEELCHAIR_ACCESS": pWheelchair,
+                 @"LATITUDE": @(latitude),
+                 @"LONGITUDE": @(longitude)
+                 
+                 };
+        
+        NSLog(@"%@", dict);
+        
+        Pin *objectPin = [[Pin alloc] initWithName:pName andWithAddress:pAddress andWithType:pType andWithSummerHours:pSummerHours andWithWinterHours:pWinterHours andWithWheelchairAccess:pWheelchair andWithLatitude:latitude andWithLongitude:longitude];
+        [storeAllArray addObject:objectPin];
+
+    }
+    
+//    NSLog(@"END");
+
+    
+//    //hard coded 3 example pins, will replace these with info from database
+//    Pin *pin1 = [[Pin alloc] initWithName:@"Adanac Park" andWithAddress:@"1025 Boundary Road" andWithType:@"Washroom in Park" andWithLocation:@"East side, fieldhouse" andWithSummerHours:@"Dawn to Dusk" andWithWinterHours:@"Dawn to Dusk" andWithWheelchairAccess:@"No" andWithMaintainer:@"Parks" andWithLatitude:49.27588097 andWithLongitude:-123.024072];
+//    Pin *pin2 = [[Pin alloc] initWithName:@"Andy Livingstone Park" andWithAddress:@"89 Expo Boulevard" andWithType:@"Washroom in Park" andWithLocation:@"South side, fieldhouse" andWithSummerHours:@"12:00 pm - 4:00 pm" andWithWinterHours:@"12:00 pm - 4:00 pm" andWithWheelchairAccess:@"No" andWithMaintainer:@"Parks" andWithLatitude:49.27782097 andWithLongitude:-123.103599];
+//    Pin *pin3 = [[Pin alloc] initWithName:@"Balaclava Park" andWithAddress:@"4594 Balaclava Street" andWithType:@"Washroom in Park" andWithLocation:@"Central, field house" andWithSummerHours:@"Dawn to Dusk" andWithWinterHours:@"Dawn to Dusk" andWithWheelchairAccess:@"No" andWithMaintainer:@"Parks" andWithLatitude:49.24523399 andWithLongitude:-123.1754609];
+//    
+//    //add all pins to the array
+//    _pinArray = [[NSMutableArray alloc] initWithArray:@[pin1, pin2, pin3]];
+    self.pinArray = [[NSMutableArray alloc] initWithArray:storeAllArray];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
