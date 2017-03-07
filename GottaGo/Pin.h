@@ -10,7 +10,7 @@
 
 @interface Pin : NSObject
 
-//should change the name to washroom
+//all the properties that are found for a washroom from the database
 
 @property NSString *name;
 @property NSString *address;

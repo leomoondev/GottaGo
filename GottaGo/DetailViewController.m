@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *maintainerLabel;
 - (IBAction)goButton:(id)sender;
 
-
 @end
 
 @implementation DetailViewController
@@ -69,5 +68,10 @@
 
 - (IBAction)goButton:(id)sender {
     //this will open an external map application and map you to this pin
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:self.locationOfPin addressDictionary:nil];
+    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    [mapItem setName:self.nameOfWashroom];
+    [mapItem openInMapsWithLaunchOptions:nil];
 }
+
 @end

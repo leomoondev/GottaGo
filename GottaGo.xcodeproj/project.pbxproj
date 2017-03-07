@@ -14,7 +14,6 @@
 		D27C34D01E6DDED700220796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27C34CE1E6DDED700220796 /* LaunchScreen.storyboard */; };
 		D27C34D91E6DDF7600220796 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34D81E6DDF7600220796 /* MasterViewController.m */; };
 		D27C34DC1E6DDFBB00220796 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27C34DB1E6DDFBB00220796 /* MapKit.framework */; };
-		D27C34DE1E6DE1D300220796 /* IMG_1308.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D27C34DD1E6DE1D300220796 /* IMG_1308.JPG */; };
 		D27C34E11E6DE63200220796 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E01E6DE63200220796 /* DetailViewController.m */; };
 		D27C34E41E6DF8F800220796 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E31E6DF8F800220796 /* Pin.m */; };
 		D27C34E71E6E149A00220796 /* PinInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E61E6E149A00220796 /* PinInfo.m */; };
@@ -32,7 +31,6 @@
 		D27C34D71E6DDF7600220796 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		D27C34D81E6DDF7600220796 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		D27C34DB1E6DDFBB00220796 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		D27C34DD1E6DE1D300220796 /* IMG_1308.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1308.JPG; sourceTree = "<group>"; };
 		D27C34DF1E6DE63200220796 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D27C34E01E6DE63200220796 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D27C34E21E6DF8F800220796 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 				D27C34C41E6DDED700220796 /* AppDelegate.m */,
 				D27C34C91E6DDED700220796 /* Main.storyboard */,
 				D27C34CC1E6DDED700220796 /* Assets.xcassets */,
-				D27C34DD1E6DE1D300220796 /* IMG_1308.JPG */,
 				D27C34CE1E6DDED700220796 /* LaunchScreen.storyboard */,
 				D27C34D11E6DDED700220796 /* Info.plist */,
 				D27C34C01E6DDED700220796 /* Supporting Files */,
@@ -171,7 +168,6 @@
 				D27C34D01E6DDED700220796 /* LaunchScreen.storyboard in Resources */,
 				D27C34CD1E6DDED700220796 /* Assets.xcassets in Resources */,
 				D27C34CB1E6DDED700220796 /* Main.storyboard in Resources */,
-				D27C34DE1E6DE1D300220796 /* IMG_1308.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +340,7 @@
 				D27C34D61E6DDED700220796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
