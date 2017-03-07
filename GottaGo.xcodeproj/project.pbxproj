@@ -17,6 +17,8 @@
 		D27C34E11E6DE63200220796 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E01E6DE63200220796 /* DetailViewController.m */; };
 		D27C34E41E6DF8F800220796 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E31E6DF8F800220796 /* Pin.m */; };
 		D27C34E71E6E149A00220796 /* PinInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E61E6E149A00220796 /* PinInfo.m */; };
+		D2A0D3D91E6F5C0700B11241 /* WashroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */; };
+		D2A0D3DC1E6F5C1900B11241 /* WashroomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		D27C34E31E6DF8F800220796 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
 		D27C34E51E6E149A00220796 /* PinInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinInfo.h; sourceTree = "<group>"; };
 		D27C34E61E6E149A00220796 /* PinInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinInfo.m; sourceTree = "<group>"; };
+		D2A0D3D71E6F5C0700B11241 /* WashroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WashroomTableViewController.h; sourceTree = "<group>"; };
+		D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WashroomTableViewController.m; sourceTree = "<group>"; };
+		D2A0D3DA1E6F5C1800B11241 /* WashroomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WashroomTableViewCell.h; sourceTree = "<group>"; };
+		D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WashroomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 				D27C34E31E6DF8F800220796 /* Pin.m */,
 				D27C34E51E6E149A00220796 /* PinInfo.h */,
 				D27C34E61E6E149A00220796 /* PinInfo.m */,
+				D2A0D3D71E6F5C0700B11241 /* WashroomTableViewController.h */,
+				D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */,
+				D2A0D3DA1E6F5C1800B11241 /* WashroomTableViewCell.h */,
+				D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */,
 			);
 			path = GottaGo;
 			sourceTree = "<group>";
@@ -183,6 +193,8 @@
 				D27C34C21E6DDED700220796 /* main.m in Sources */,
 				D27C34E71E6E149A00220796 /* PinInfo.m in Sources */,
 				D27C34E41E6DF8F800220796 /* Pin.m in Sources */,
+				D2A0D3DC1E6F5C1900B11241 /* WashroomTableViewCell.m in Sources */,
+				D2A0D3D91E6F5C0700B11241 /* WashroomTableViewController.m in Sources */,
 				D27C34E11E6DE63200220796 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

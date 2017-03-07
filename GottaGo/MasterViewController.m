@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "Pin.h"
 #import "PinInfo.h"
+#import "WashroomTableViewController.h"
 
 @interface MasterViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -18,6 +19,9 @@
 
 //array of pins
 @property NSMutableArray *pinArray;
+
+//distance sorted array
+@property NSMutableArray *sortedArray; 
 
 //getting the user's current location
 @property CLLocationManager *locationManager;
@@ -54,7 +58,8 @@
     NSMutableArray *storeAllArray = [NSMutableArray array];
     NSDictionary *dict = [NSMutableDictionary dictionary];
     
-    for (int i = 0; i < locations.count-1; i++) {
+    //changed the first item's index to equal 1 so we wouldn't get the headings
+    for (int i = 1; i < locations.count-1; i++) {
         NSString *location = [locations objectAtIndex:i];
         
         
@@ -117,7 +122,7 @@
 
 - (IBAction)listViewButton:(id)sender {
     //segue to the table view, need to configure the prepare for segue to pass objects over. Will probably run code to sort the pins like in gotta go button
-    
+    [self performSegueWithIdentifier:@"showList" sender:sender];
 }
 
 - (IBAction)gottaGoButton:(id)sender {
@@ -211,6 +216,13 @@
         detailVC.maintainerOfWashroom = info.pinMaintainer;
         detailVC.locationOfPin = info.coordinate;
     }
+    
+    if ([[segue identifier] isEqualToString:@"showList"]) {
+        WashroomTableViewController *washroomTableVC = segue.destinationViewController;
+        washroomTableVC.washrooms = self.pinArray;
+        
+        //do I pass on the array of pins?
+        }
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
