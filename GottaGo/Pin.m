@@ -10,8 +10,8 @@
 
 @implementation Pin
 
-//-(instancetype)initWithName:(NSString *)name andWithAddress:(NSString *)address andWithType:(NSString *)type andWithLocation:(NSString *)location andWithSummerHours:(NSString *)summerHours andWithWinterHours:(NSString *)winterHours andWithWheelchairAccess:(NSString *)wheelchairAccess andWithMaintainer:(NSString *)maintainer andWithLatitude:(double)latitude andWithLongitude:(double)longitude {
--(instancetype)initWithName:(NSString *)name andWithAddress:(NSString *)address andWithType:(NSString *)type andWithSummerHours:(NSString *)summerHours andWithWinterHours:(NSString *)winterHours andWithWheelchairAccess:(NSString *)wheelchairAccess andWithLatitude:(double)latitude andWithLongitude:(double)longitude {
+-(instancetype)initWithName:(NSString *)name andWithAddress:(NSString *)address andWithType:(NSString *)type andWithLocation:(NSString *)location andWithSummerHours:(NSString *)summerHours andWithWinterHours:(NSString *)winterHours andWithWheelchairAccess:(NSString *)wheelchairAccess andWithMaintainer:(NSString *)maintainer andWithLatitude:(double)latitude andWithLongitude:(double)longitude {
+
 
     if (self = [super init]) {
         _name = name;
