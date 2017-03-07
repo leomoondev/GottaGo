@@ -116,11 +116,37 @@
 }
 
 - (IBAction)listViewButton:(id)sender {
-    //segue to the table view
+    //segue to the table view, need to configure the prepare for segue to pass objects over. Will probably run code to sort the pins like in gotta go button
+    
 }
 
 - (IBAction)gottaGoButton:(id)sender {
-    //pops you out to external maps app to give you directions to closest washroom
+    
+    CLLocation *userLocation = self.masterMapView.userLocation.location;
+    
+    NSMutableDictionary *locationDic = [NSMutableDictionary dictionary];
+    
+    for (Pin *object in self.pinArray) {
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:object.latitude longitude:object.longitude];
+        CLLocationDistance distance = [loc distanceFromLocation:userLocation];
+
+        [locationDic setObject:loc forKey:@(distance)];
+    }
+    
+    NSArray *sorting = [[locationDic allKeys] sortedArrayUsingSelector:@selector(compare:)];
+
+    NSArray *closest = [sorting subarrayWithRange:NSMakeRange(0, MIN(1, sorting.count))];
+
+    NSArray *closestLocation = [locationDic objectsForKeys:closest notFoundMarker:[NSNull null]];
+
+    NSLog(@"%@", closestLocation.firstObject);
+    
+    CLLocation *closestOne = closestLocation.firstObject;
+    
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:closestOne.coordinate addressDictionary:nil];
+    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    [mapItem setName:@"Closest Washroom"];
+    [mapItem openInMapsWithLaunchOptions:nil];
 }
 
 -(void)showPins {
@@ -128,7 +154,7 @@
     //add all pins to the map
     for (Pin *object in self.pinArray) {
         CLLocationCoordinate2D lctn = CLLocationCoordinate2DMake(object.latitude, object.longitude);
-        MKCoordinateSpan span = MKCoordinateSpanMake(0.5f, 0.5f);
+        MKCoordinateSpan span = MKCoordinateSpanMake(0.3f, 0.3f);
         self.masterMapView.region = MKCoordinateRegionMake(lctn, span);
         
         PinInfo *pin = [[PinInfo alloc] init];
