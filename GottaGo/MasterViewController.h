@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+#import "CSVParser.h"
+#import "DetailViewController.h"
+#import "Pin.h"
+#import "PinInfo.h"
+#import "WashroomTableViewController.h"
+
 @interface MasterViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet MKMapView *masterMapView;
