@@ -16,6 +16,8 @@
 		D27C34DC1E6DDFBB00220796 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27C34DB1E6DDFBB00220796 /* MapKit.framework */; };
 		D27C34DE1E6DE1D300220796 /* IMG_1308.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D27C34DD1E6DE1D300220796 /* IMG_1308.JPG */; };
 		D27C34E11E6DE63200220796 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E01E6DE63200220796 /* DetailViewController.m */; };
+		D27C34E41E6DF8F800220796 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E31E6DF8F800220796 /* Pin.m */; };
+		D27C34E71E6E149A00220796 /* PinInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E61E6E149A00220796 /* PinInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		D27C34DD1E6DE1D300220796 /* IMG_1308.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1308.JPG; sourceTree = "<group>"; };
 		D27C34DF1E6DE63200220796 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D27C34E01E6DE63200220796 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D27C34E21E6DF8F800220796 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
+		D27C34E31E6DF8F800220796 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
+		D27C34E51E6E149A00220796 /* PinInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinInfo.h; sourceTree = "<group>"; };
+		D27C34E61E6E149A00220796 /* PinInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,10 @@
 				D27C34D81E6DDF7600220796 /* MasterViewController.m */,
 				D27C34DF1E6DE63200220796 /* DetailViewController.h */,
 				D27C34E01E6DE63200220796 /* DetailViewController.m */,
+				D27C34E21E6DF8F800220796 /* Pin.h */,
+				D27C34E31E6DF8F800220796 /* Pin.m */,
+				D27C34E51E6E149A00220796 /* PinInfo.h */,
+				D27C34E61E6E149A00220796 /* PinInfo.m */,
 			);
 			path = GottaGo;
 			sourceTree = "<group>";
@@ -175,6 +185,8 @@
 				D27C34C51E6DDED700220796 /* AppDelegate.m in Sources */,
 				D27C34D91E6DDF7600220796 /* MasterViewController.m in Sources */,
 				D27C34C21E6DDED700220796 /* main.m in Sources */,
+				D27C34E71E6E149A00220796 /* PinInfo.m in Sources */,
+				D27C34E41E6DF8F800220796 /* Pin.m in Sources */,
 				D27C34E11E6DE63200220796 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
