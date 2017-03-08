@@ -69,6 +69,9 @@
     
     // Handle the empty field from the CSV file
     csvString = [csvString stringByReplacingOccurrencesOfString:@",," withString:@",\"\","];
+    // Handle the quotation mark inside of String from the CSV file
+    csvString = [csvString stringByReplacingOccurrencesOfString:@"\"\"" withString:@" "];
+
     
     NSMutableArray *csvDataArray = [[NSMutableArray alloc] init];
     
