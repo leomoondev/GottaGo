@@ -39,6 +39,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vn7-xV-ap7">
                         <barButtonItem key="leftBarButtonItem" image="Menu-50" id="xHk-fb-6oj">
+                            <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                             <connections>
                                 <action selector="listView:" destination="HUq-ch-hcx" id="y3H-ub-uub"/>
                             </connections>

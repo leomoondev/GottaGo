@@ -12,7 +12,7 @@
 
 -(void)setImage:(UINavigationController *)navigationController withNavItem:(UINavigationItem *)navItem {
     
-    UIImage *image = [UIImage imageNamed:@"logo"];
+    UIImage *image = [UIImage imageNamed:@"logo-1"];
     UIImageView *logoView = [[UIImageView alloc] initWithImage:image];
     [logoView setImage:image];
     float targetHeight = navigationController.navigationBar.frame.size.height;
