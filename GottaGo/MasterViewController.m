@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 
+
 @interface MasterViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 - (IBAction)gottaGoButton:(id)sender;
@@ -52,6 +53,10 @@
     self.sortedArray = [[NSArray alloc] init];
     self.distanceArray = [[NSArray alloc] init];
     
+    //set logo image
+    SetNavigationTitleImage *setTitleImage = [[SetNavigationTitleImage alloc] init];
+    [setTitleImage setImage:self.navigationController withNavItem:self.navigationItem];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -72,6 +77,7 @@
         [locationDic setObject:loc forKey:@(distance)];
     }
     
+    //put sorting in its own class and call to it in these two buttons
     NSArray *sorting = [[locationDic allKeys] sortedArrayUsingSelector:@selector(compare:)];
 
     NSArray *closest = [sorting subarrayWithRange:NSMakeRange(0, MIN(1, sorting.count))];
@@ -115,6 +121,8 @@
     
 }
 
+
+//can we animate this on the map?
 -(void)showPins {
     
     //add all pins to the map
@@ -146,16 +154,6 @@
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
 
     PinInfo *info = (PinInfo *)view.annotation;
-    
-    NSLog(@"%@", info.title);
-    NSLog(@"%@", info.subtitle);
-    NSLog(@"%@", info.pinType);
-    NSLog(@"%@", info.pinLocation);
-    NSLog(@"%@", info.pinSummerHours);
-    NSLog(@"%@", info.pinWinterHours);
-    NSLog(@"%@", info.pinWheelchairAccess);
-    NSLog(@"%@", info.pinMaintainer);
-    
     [self performSegueWithIdentifier:@"showDetail" sender:info];
     
 }
@@ -182,8 +180,6 @@
         WashroomTableViewController *washroomTableVC = segue.destinationViewController;
         washroomTableVC.washrooms = self.sortedArray;
         washroomTableVC.distances = self.distanceArray; 
-        
-        //do I pass on the array of pins?
         }
 }
 

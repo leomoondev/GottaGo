@@ -38,7 +38,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vn7-xV-ap7">
-                        <barButtonItem key="leftBarButtonItem" title="List" id="xHk-fb-6oj">
+                        <barButtonItem key="leftBarButtonItem" image="Menu-50" id="xHk-fb-6oj">
                             <connections>
                                 <action selector="listView:" destination="HUq-ch-hcx" id="y3H-ub-uub"/>
                             </connections>
@@ -75,13 +75,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmL-vU-QmN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmL-vU-QmN">
                                             <rect key="frame" x="74" y="0.0" width="293" height="23"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WC?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRY-Ru-Aup">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="WC?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRY-Ru-Aup">
                                             <rect key="frame" x="74" y="55" width="293" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -93,7 +93,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Washroom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-td-uXa">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Type of Washroom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-td-uXa">
                                             <rect key="frame" x="74" y="29" width="293" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -276,11 +276,12 @@
         <!--Navigation Controller-->
         <scene sceneID="rUE-lk-Hks">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nwx-VA-3tC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nwx-VA-3tC" colorLabel="IBBuiltInLabel-Orange" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7SC-xW-3hx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7SC-xW-3hx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -292,7 +293,10 @@
             <point key="canvasLocation" x="84" y="144.3778110944528"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Menu-50" width="50" height="50"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zro-DG-cc2"/>
+        <segue reference="PvD-kA-Uui"/>
     </inferredMetricsTieBreakers>
 </document>

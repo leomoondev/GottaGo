@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "SetNavigationTitleImage.h"
 
 @interface DetailViewController () <MKMapViewDelegate>
 
@@ -28,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    SetNavigationTitleImage *setTitleImage = [[SetNavigationTitleImage alloc] init];
+    [setTitleImage setImage:self.navigationController withNavItem:self.navigationItem];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

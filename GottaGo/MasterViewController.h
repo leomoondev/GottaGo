@@ -14,9 +14,12 @@
 #import "Pin.h"
 #import "PinInfo.h"
 #import "WashroomTableViewController.h"
+#import "SetNavigationTitleImage.h"
 
 @interface MasterViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet MKMapView *masterMapView;
+
+//@property SetNavigationTitleImage *setTitleImage;
 
 @end  
