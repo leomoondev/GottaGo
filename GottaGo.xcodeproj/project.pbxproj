@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2546D8C1E6F867D00B3DE00 /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D2546D8B1E6F867D00B3DE00 /* CSVParser.m */; };
 		D27C34C21E6DDED700220796 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34C11E6DDED700220796 /* main.m */; };
 		D27C34C51E6DDED700220796 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34C41E6DDED700220796 /* AppDelegate.m */; };
 		D27C34CB1E6DDED700220796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27C34C91E6DDED700220796 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2546D8A1E6F867D00B3DE00 /* CSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVParser.h; sourceTree = "<group>"; };
+		D2546D8B1E6F867D00B3DE00 /* CSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVParser.m; sourceTree = "<group>"; };
 		D27C34BD1E6DDED700220796 /* GottaGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GottaGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27C34C11E6DDED700220796 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D27C34C31E6DDED700220796 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 			children = (
 				D27C34C31E6DDED700220796 /* AppDelegate.h */,
 				D27C34C41E6DDED700220796 /* AppDelegate.m */,
+				D2546D8A1E6F867D00B3DE00 /* CSVParser.h */,
+				D2546D8B1E6F867D00B3DE00 /* CSVParser.m */,
 				D27C34C91E6DDED700220796 /* Main.storyboard */,
 				D27C34CC1E6DDED700220796 /* Assets.xcassets */,
 				D27C34CE1E6DDED700220796 /* LaunchScreen.storyboard */,
@@ -189,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27C34C51E6DDED700220796 /* AppDelegate.m in Sources */,
+				D2546D8C1E6F867D00B3DE00 /* CSVParser.m in Sources */,
 				D27C34D91E6DDF7600220796 /* MasterViewController.m in Sources */,
 				D27C34C21E6DDED700220796 /* main.m in Sources */,
 				D27C34E71E6E149A00220796 /* PinInfo.m in Sources */,

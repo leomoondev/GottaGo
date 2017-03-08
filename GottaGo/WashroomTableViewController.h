@@ -11,5 +11,6 @@
 @interface WashroomTableViewController : UITableViewController
 
 @property NSArray *washrooms;
+@property NSArray *distances; 
 
 @end

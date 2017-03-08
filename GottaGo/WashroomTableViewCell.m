@@ -25,6 +25,7 @@
     self.wheelchairAccessLabel.text = [NSString stringWithFormat:@"♿️: %@", self.pin.wheelchairAccess];
     
     //need to also set the distance label
+//    self.distanceLabel.text = 
 }
 
 @end

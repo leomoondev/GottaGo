@@ -18,6 +18,7 @@
 
 //distance sorted array
 @property NSArray *sortedArray;
+@property NSArray *distanceArray;
 
 //getting the user's current location
 @property CLLocationManager *locationManager;
@@ -49,6 +50,7 @@
     
     self.pinArray = [[NSMutableArray alloc] initWithArray:[parserCSV parseDataFromCSV]];
     self.sortedArray = [[NSArray alloc] init];
+    self.distanceArray = [[NSArray alloc] init];
     
 }
 
@@ -100,10 +102,13 @@
     }
     
     NSArray *sortedKeys = [[washroomObjects allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
+    NSLog(@"%@", sortedKeys);
         
     NSArray *washrooms = [washroomObjects objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
     
     self.sortedArray = washrooms;
+    self.distanceArray = sortedKeys; 
     
     [self performSegueWithIdentifier:@"showList" sender:sender];
     
@@ -175,6 +180,7 @@
     if ([[segue identifier] isEqualToString:@"showList"]) {
         WashroomTableViewController *washroomTableVC = segue.destinationViewController;
         washroomTableVC.washrooms = self.sortedArray;
+        washroomTableVC.distances = self.distanceArray; 
         
         //do I pass on the array of pins?
         }
