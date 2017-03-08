@@ -119,7 +119,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="5WR-SV-c5x" kind="show" identifier="listShowDetail" id="3WC-Kd-58R"/>
+                        <segue destination="5WR-SV-c5x" kind="show" identifier="listShowDetail" id="Zro-DG-cc2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0d-nn-f7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,6 +271,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3WC-Kd-58R"/>
+        <segue reference="Zro-DG-cc2"/>
     </inferredMetricsTieBreakers>
 </document>

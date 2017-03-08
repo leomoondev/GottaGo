@@ -9,8 +9,10 @@
 #import "WashroomTableViewController.h"
 #import "WashroomTableViewCell.h"
 #import "DetailViewController.h"
+#import "PinInfo.h"
+#import "Pin.h"
 
-@interface WashroomTableViewController ()
+@interface WashroomTableViewController () <MKMapViewDelegate>
 
 @end
 
@@ -66,12 +68,27 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         DetailViewController *detailVC = (DetailViewController *)[segue destinationViewController];
-        //how to set the items? Should I make a detail item?
-        //need to do the same as what you did in the master view controller and pass the info from selected to detial
+
+        Pin *selectedPin = [[Pin alloc] init];
+        selectedPin = self.washrooms[indexPath.row];
         
+        detailVC.nameOfWashroom = selectedPin.name;
+        detailVC.addressOfWashroom = selectedPin.address;
+        detailVC.typeOfWashroom = selectedPin.type;
+        detailVC.locationOfWashroom = selectedPin.location;
+        detailVC.summerHoursOfWashroom = selectedPin.summerHours;
+        detailVC.winterHoursOfWashroom = selectedPin.winterHours;
+        detailVC.wheelchairAccessOfWashroom = selectedPin.wheelchairAccess;
+        detailVC.maintainerOfWashroom = selectedPin.maintainer;
+        
+        CLLocationCoordinate2D lctn = CLLocationCoordinate2DMake(selectedPin.latitude, selectedPin.longitude);
+        detailVC.locationOfPin = lctn;
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"listShowDetail" sender:self];
+}
 
 /*
 // Override to support editing the table view.
