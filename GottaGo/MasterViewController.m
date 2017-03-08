@@ -98,6 +98,7 @@
         CLLocation *loc = [[CLLocation alloc] initWithLatitude:object.latitude longitude:object.longitude];
         CLLocationDistance distance = [loc distanceFromLocation:userLocation];
         
+        distance = trunc(distance * 1) / 1;
         [washroomObjects setObject:object forKey:@(distance)];
     }
     

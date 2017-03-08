@@ -52,7 +52,7 @@
     
     // Configure the cell...
     cell.pin = self.washrooms[indexPath.row];
-    cell.distanceLabel.text = [NSString stringWithFormat:@"%@", self.distances[indexPath.row]];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%@m", self.distances[indexPath.row]];
     
     return cell;
 }
