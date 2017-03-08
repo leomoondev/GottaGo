@@ -40,7 +40,12 @@
 
     //set the label text to the passed properties, may need to add more text (stringWithFormat)
     self.nameLabel.text = self.nameOfWashroom;
-    self.addressLabel.text = self.addressOfWashroom;
+    
+    if ([self.addressOfWashroom isEqualToString:@"\"\""]) {
+        self.addressLabel.hidden = YES;
+    } else {
+        self.addressLabel.text = [NSString stringWithFormat:@"Address: %@", self.addressOfWashroom];
+    }
     self.typeLabel.text = self.typeOfWashroom;
     self.locationLabel.text = [NSString stringWithFormat:@"Located: %@", self.locationOfWashroom];
     self.summerHoursLabel.text = [NSString stringWithFormat:@"Summer Hours: %@", self.summerHoursOfWashroom];
