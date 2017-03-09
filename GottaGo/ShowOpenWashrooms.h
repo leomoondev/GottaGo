@@ -13,7 +13,6 @@
 @interface ShowOpenWashrooms : NSObject
 
 - (void) convertOpeningHours;
-- (void)checkOpeningFirst:(double )startingHours second:(double )StartingMinutes third:(double )closingHours fourth:(double )closingMinutes;
 
 @property NSInteger currentMinutes;
 @property NSInteger currentHours;

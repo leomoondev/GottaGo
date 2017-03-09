@@ -45,12 +45,8 @@
         [pin setPinWinterHours:object.winterHours];
         
         NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth |NSCalendarUnitYear fromDate:[NSDate date]];
-        //        NSInteger day = [components day];
         NSInteger month = [components month];
-        //        NSInteger year = [components year];
-        //        NSLog(@"%li",(long)day);
-        //        NSLog(@"%li",(long)month);
-        //        NSLog(@"%li",(long)year);
+
         
         // October to Februrary : Show Winter Hours
         if((10 <= month) || (month <= 3)) {
@@ -230,8 +226,6 @@
                 self.closingHourWinter = 17;
                 self.closingMinutesWinter = 0;
             }
-            
-            // NSLog(@"%ld", self.storeOpenWashrooms.count);
         }
         
         // March to September : Show Summer Hours
@@ -239,32 +233,8 @@
             if([object.summerHours isEqualToString:@"Dawn to Dusk"]) {
                 NSLog(@"COM HERE");
             }
-            
         }
-        
-        //
-        //        NSMutableArray *storeSummerHours = [NSMutableArray array];
-        //        NSMutableArray *storeWinterHours = [NSMutableArray array];
-        //
-        //        [storeSummerHours addObject:object.summerHours];
-        //        [storeWinterHours addObject:object.winterHours];
-        
-        //add the pin to the map
-        //        [self.masterMapView addAnnotation:pin];
-        
     }
-    
-    
-    //  NSDate *dummyData;
-    //    PinInfo *info = (PinInfo *)view.annotation;
-    //    if([info.pinWinterHours isEqualToString:@"Dawn To Dusk"]) {
-    //
-    //        NSLog(@"COME HERE???");
-    //
-    //    }
-    
-    
-    //    return dummyData;
 }
 
 
@@ -277,15 +247,10 @@
             if((StartingMinutes <= self.currentMinutes) && (self.currentMinutes < closingMinutes)) {
                 
                 self.isWashroomOpen = true;
-                
-                NSLog(@"SHOW Washroom ON");
             }
         }
         else {
             self.isWashroomOpen = true;
-            
-            NSLog(@"SHOW Washroom ON");
-            
         }
     }
     else {
