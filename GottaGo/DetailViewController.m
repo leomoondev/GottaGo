@@ -7,8 +7,10 @@
 //
 
 #import "DetailViewController.h"
-#import "SetNavigationTitleImage.h"
 #import "RateWashroomViewController.h"
+#import "GottaGo-Swift.h"
+
+@class SetNavigationTitleImage;
 
 @interface DetailViewController () <MKMapViewDelegate>
 

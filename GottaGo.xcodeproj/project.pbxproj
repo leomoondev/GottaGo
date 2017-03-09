@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D2546D8C1E6F867D00B3DE00 /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D2546D8B1E6F867D00B3DE00 /* CSVParser.m */; };
-		D2546D8F1E70A97800B3DE00 /* SetNavigationTitleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D2546D8E1E70A97800B3DE00 /* SetNavigationTitleImage.m */; };
 		D2546D921E70DB0600B3DE00 /* RateWashroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2546D911E70DB0600B3DE00 /* RateWashroomViewController.m */; };
 		D27C34C21E6DDED700220796 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34C11E6DDED700220796 /* main.m */; };
 		D27C34C51E6DDED700220796 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34C41E6DDED700220796 /* AppDelegate.m */; };
@@ -22,13 +21,13 @@
 		D27C34E71E6E149A00220796 /* PinInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E61E6E149A00220796 /* PinInfo.m */; };
 		D2A0D3D91E6F5C0700B11241 /* WashroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */; };
 		D2A0D3DC1E6F5C1900B11241 /* WashroomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */; };
+		DA245B171E71488600981A9A /* SetNavigationTitleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA245B161E71488600981A9A /* SetNavigationTitleImage.swift */; };
+		DA6312DB1E70F39F001CD12C /* ShowOpenWashrooms.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D2546D8A1E6F867D00B3DE00 /* CSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVParser.h; sourceTree = "<group>"; };
 		D2546D8B1E6F867D00B3DE00 /* CSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVParser.m; sourceTree = "<group>"; };
-		D2546D8D1E70A97800B3DE00 /* SetNavigationTitleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetNavigationTitleImage.h; sourceTree = "<group>"; };
-		D2546D8E1E70A97800B3DE00 /* SetNavigationTitleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetNavigationTitleImage.m; sourceTree = "<group>"; };
 		D2546D901E70DB0600B3DE00 /* RateWashroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateWashroomViewController.h; sourceTree = "<group>"; };
 		D2546D911E70DB0600B3DE00 /* RateWashroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateWashroomViewController.m; sourceTree = "<group>"; };
 		D27C34BD1E6DDED700220796 /* GottaGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GottaGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +51,10 @@
 		D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WashroomTableViewController.m; sourceTree = "<group>"; };
 		D2A0D3DA1E6F5C1800B11241 /* WashroomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WashroomTableViewCell.h; sourceTree = "<group>"; };
 		D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WashroomTableViewCell.m; sourceTree = "<group>"; };
+		DA245B161E71488600981A9A /* SetNavigationTitleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNavigationTitleImage.swift; sourceTree = "<group>"; };
+		DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOpenWashrooms.h; sourceTree = "<group>"; };
+		DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOpenWashrooms.m; sourceTree = "<group>"; };
+		DA9756251E71DBB0000132F0 /* GottaGo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GottaGo-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +110,12 @@
 				D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */,
 				D2A0D3DA1E6F5C1800B11241 /* WashroomTableViewCell.h */,
 				D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */,
-				D2546D8D1E70A97800B3DE00 /* SetNavigationTitleImage.h */,
-				D2546D8E1E70A97800B3DE00 /* SetNavigationTitleImage.m */,
 				D2546D901E70DB0600B3DE00 /* RateWashroomViewController.h */,
 				D2546D911E70DB0600B3DE00 /* RateWashroomViewController.m */,
+				DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */,
+				DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */,
+				DA245B161E71488600981A9A /* SetNavigationTitleImage.swift */,
+				DA9756251E71DBB0000132F0 /* GottaGo-Bridging-Header.h */,
 			);
 			path = GottaGo;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 					D27C34BC1E6DDED600220796 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = F9J4B49FUC;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -205,9 +211,10 @@
 			files = (
 				D27C34C51E6DDED700220796 /* AppDelegate.m in Sources */,
 				D2546D921E70DB0600B3DE00 /* RateWashroomViewController.m in Sources */,
-				D2546D8F1E70A97800B3DE00 /* SetNavigationTitleImage.m in Sources */,
 				D2546D8C1E6F867D00B3DE00 /* CSVParser.m in Sources */,
+				DA6312DB1E70F39F001CD12C /* ShowOpenWashrooms.m in Sources */,
 				D27C34D91E6DDF7600220796 /* MasterViewController.m in Sources */,
+				DA245B171E71488600981A9A /* SetNavigationTitleImage.swift in Sources */,
 				D27C34C21E6DDED700220796 /* main.m in Sources */,
 				D27C34E71E6E149A00220796 /* PinInfo.m in Sources */,
 				D27C34E41E6DF8F800220796 /* Pin.m in Sources */,
@@ -331,11 +338,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F9J4B49FUC;
 				INFOPLIST_FILE = GottaGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = scott847.GottaGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GottaGo/GottaGo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -343,11 +355,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F9J4B49FUC;
 				INFOPLIST_FILE = GottaGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = scott847.GottaGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GottaGo/GottaGo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
