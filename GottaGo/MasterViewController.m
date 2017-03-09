@@ -31,6 +31,8 @@
 @property CSVParser *parserCSV;
 
 @property ShowOpenWashrooms *showOpenWashrooms;
+- (IBAction)mapTypeSegmentedControl:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentControlOutlet;
 
 @end
 
@@ -112,7 +114,7 @@
 }
 
 - (IBAction)listView:(id)sender {
-        
+    
     NSDictionary *washroomsSortedByDistance = [self.sortByDistance sortDistanceWith:self.masterMapView withWashroomArray:self.showOpenWashrooms.pinArray];
     
     NSArray *sortedKeys = [[washroomsSortedByDistance allKeys] sortedArrayUsingSelector:@selector(compare:)];
@@ -197,6 +199,8 @@
         detailVC.wheelchairAccessOfWashroom = info.pinWheelchairAccess;
         detailVC.maintainerOfWashroom = info.pinMaintainer;
         detailVC.locationOfPin = info.coordinate;
+        
+        detailVC.detailedMapType = self.masterMapView.mapType;
     }
     
     if ([[segue identifier] isEqualToString:@"showList"]) {
@@ -226,4 +230,19 @@
     return annotationView;
 }
 
+- (IBAction)mapTypeSegmentedControl:(id)sender {
+    
+    if (self.mapTypeSegmentControlOutlet.selectedSegmentIndex == 0) {
+        self.masterMapView.mapType = MKMapTypeStandard;
+    }
+    if (self.mapTypeSegmentControlOutlet.selectedSegmentIndex == 1) {
+        self.masterMapView.mapType = MKMapTypeSatellite;
+
+    }
+    if (self.mapTypeSegmentControlOutlet.selectedSegmentIndex == 2) {
+        self.masterMapView.mapType = MKMapTypeHybrid;
+
+    }
+    
+}
 @end
