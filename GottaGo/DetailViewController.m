@@ -75,7 +75,8 @@
     self.summerHoursLabel.text = [NSString stringWithFormat:@"Summer Hours: %@", self.summerHoursOfWashroom];
     self.winterHoursLabel.text = [NSString stringWithFormat:@"Winter Hours: %@", self.winterHoursOfWashroom];
     self.wheelchairAccessLabel.text = [NSString stringWithFormat:@"Wheelchair Access: %@", self.wheelchairAccessOfWashroom];
-    self.maintainerLabel.text = [NSString stringWithFormat:@"Maintained By: %@", self.maintainerOfWashroom];
+    self.maintainerLabel.text = [[NSString stringWithFormat:@"Maintained By: %@", self.maintainerOfWashroom] stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    
 }
 
 -(void)showPin {
