@@ -8,18 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-
 #import "CSVParser.h"
 #import "DetailViewController.h"
 #import "Pin.h"
 #import "PinInfo.h"
 #import "WashroomTableViewController.h"
 #import "ShowOpenWashrooms.h"
+#import "SortByDistance.h"
 
 @interface MasterViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet MKMapView *masterMapView;
 
 @property (assign, nonatomic) NSUInteger zoomLevel;
+
+@property SortByDistance *sortByDistance; 
 
 @end
