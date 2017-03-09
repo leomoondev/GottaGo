@@ -24,5 +24,6 @@
 //@property SetNavigationTitleImage *setTitleImage;
 
 
+@property (assign, nonatomic) NSUInteger zoomLevel;
 
-@end  
+@end

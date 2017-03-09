@@ -61,22 +61,25 @@
     [setTitleImage setImage:self.navigationController withNavItem:self.navigationItem];
     
     self.showOpenWashrooms.storeOpenWashrooms = [[NSMutableArray alloc] init];
+    [self showPins:self.showOpenWashrooms.pinArray];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
 
     //need to show all the pins on the map from the database
-    [self showPins:self.showOpenWashrooms.pinArray];
+    //[self showPins:self.showOpenWashrooms.pinArray];
+    [self openToggleSwitch:self];
     [self.showOpenWashrooms convertOpeningHours];
 }
 
 - (IBAction)openToggleSwitch:(id)sender {
     if (self.openSwitch.on){
         [self.masterMapView removeAnnotations:self.masterMapView.annotations];
-        [self showPins:self.showOpenWashrooms.storeOpenWashrooms];
+        [self showPinsWhenSwitchOnOff:self.showOpenWashrooms.storeOpenWashrooms];
     }
     else{
-        [self showPins:self.showOpenWashrooms.pinArray];
+        [self showPinsWhenSwitchOnOff:self.showOpenWashrooms.pinArray];
     }
 }
 
@@ -159,9 +162,30 @@
         
         //add the pin to the map
         [self.masterMapView addAnnotation:pin];
-        
     }
-    
+}
+
+-(void)showPinsWhenSwitchOnOff :(NSArray *)passedArray {
+    //add all pins to the map
+    for (Pin *object in passedArray) {
+        CLLocationCoordinate2D lctn = CLLocationCoordinate2DMake(object.latitude, object.longitude);
+        
+        PinInfo *pin = [[PinInfo alloc] init];
+        
+        //set values to the pin
+        [pin setCoordinate:lctn];
+        [pin setTitle:object.name];
+        [pin setSubtitle:object.address];
+        [pin setPinType:object.type];
+        [pin setPinLocation:object.location];
+        [pin setPinSummerHours:object.summerHours];
+        [pin setPinWinterHours:object.winterHours];
+        [pin setPinWheelchairAccess:object.wheelchairAccess];
+        [pin setPinMaintainer:object.maintainer];
+        
+        //add the pin to the map
+        [self.masterMapView addAnnotation:pin];
+    }
 }
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
