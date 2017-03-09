@@ -14,8 +14,6 @@
 #import "GottaGo-Swift.h"
 
 @class SetNavigationTitleImage;
-//
-//@class SetNavigationTitleImage;
 
 @interface WashroomTableViewController () <MKMapViewDelegate>
 

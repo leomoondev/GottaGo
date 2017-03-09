@@ -20,9 +20,6 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *masterMapView;
 
-//@property SetNavigationTitleImage *setTitleImage;
-
-
 @property (assign, nonatomic) NSUInteger zoomLevel;
 
 @end
