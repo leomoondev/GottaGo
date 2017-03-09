@@ -26,5 +26,7 @@
 
 @property CLLocationCoordinate2D locationOfPin;
 
+@property MKMapType detailedMapType;
+
 
 @end

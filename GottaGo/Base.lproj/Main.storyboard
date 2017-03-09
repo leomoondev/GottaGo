@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ufZ-4g-pKZ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="442"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="414"/>
                                 <connections>
                                     <outlet property="delegate" destination="HUq-ch-hcx" id="F7N-1v-XWe"/>
                                 </connections>
@@ -45,17 +45,32 @@
                                     <action selector="openToggleSwitch:" destination="HUq-ch-hcx" eventType="valueChanged" id="1JA-Cj-inn"/>
                                 </connections>
                             </switch>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DYB-SC-i3U">
+                                <rect key="frame" x="16" y="486" width="288" height="29"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeSegmentedControl:" destination="HUq-ch-hcx" eventType="valueChanged" id="y7s-UJ-N5l"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="spK-TC-bdW" firstAttribute="top" secondItem="ufZ-4g-pKZ" secondAttribute="bottom" constant="21" id="1NC-mp-SdD"/>
+                            <constraint firstItem="DYB-SC-i3U" firstAttribute="leading" secondItem="hsL-bJ-0Y2" secondAttribute="leadingMargin" id="0p6-nc-sOf"/>
+                            <constraint firstItem="spK-TC-bdW" firstAttribute="top" secondItem="ufZ-4g-pKZ" secondAttribute="bottom" constant="49" id="1NC-mp-SdD"/>
                             <constraint firstAttribute="trailing" secondItem="ufZ-4g-pKZ" secondAttribute="trailing" id="6rm-ER-xWY"/>
                             <constraint firstItem="ufZ-4g-pKZ" firstAttribute="top" secondItem="ehc-ky-HRf" secondAttribute="bottom" id="BOI-rp-1Ov"/>
+                            <constraint firstItem="DYB-SC-i3U" firstAttribute="trailing" secondItem="hsL-bJ-0Y2" secondAttribute="trailingMargin" id="LsA-5M-gSR"/>
+                            <constraint firstItem="6de-mi-dMD" firstAttribute="top" secondItem="DYB-SC-i3U" secondAttribute="bottom" constant="8" id="OYC-Ti-G57"/>
                             <constraint firstItem="ufZ-4g-pKZ" firstAttribute="leading" secondItem="hsL-bJ-0Y2" secondAttribute="leading" id="TBC-yl-LLH"/>
+                            <constraint firstItem="DYB-SC-i3U" firstAttribute="top" secondItem="ufZ-4g-pKZ" secondAttribute="bottom" constant="8" id="Wp5-WX-wXm"/>
                             <constraint firstItem="spK-TC-bdW" firstAttribute="leading" secondItem="hsL-bJ-0Y2" secondAttribute="leadingMargin" id="ZLK-XK-fFp"/>
                             <constraint firstItem="6de-mi-dMD" firstAttribute="trailing" secondItem="hsL-bJ-0Y2" secondAttribute="trailingMargin" id="gkV-Lb-k13"/>
-                            <constraint firstItem="9r5-rX-YYw" firstAttribute="top" secondItem="ufZ-4g-pKZ" secondAttribute="bottom" constant="62" id="s4N-HR-IHS"/>
-                            <constraint firstItem="6de-mi-dMD" firstAttribute="top" secondItem="ufZ-4g-pKZ" secondAttribute="bottom" constant="16" id="uKg-lM-Cxv"/>
+                            <constraint firstItem="9r5-rX-YYw" firstAttribute="top" secondItem="ufZ-4g-pKZ" secondAttribute="bottom" constant="90" id="s4N-HR-IHS"/>
+                            <constraint firstItem="6de-mi-dMD" firstAttribute="top" secondItem="ufZ-4g-pKZ" secondAttribute="bottom" constant="44" id="uKg-lM-Cxv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vn7-xV-ap7">
@@ -72,6 +87,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mapTypeSegmentControlOutlet" destination="DYB-SC-i3U" id="DU5-vU-dTV"/>
                         <outlet property="masterMapView" destination="ufZ-4g-pKZ" id="rrL-V4-JHn"/>
                         <outlet property="openSwitch" destination="6de-mi-dMD" id="Q0u-Lw-eXD"/>
                         <segue destination="5WR-SV-c5x" kind="show" identifier="showDetail" id="PvD-kA-Uui"/>
@@ -80,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3i2-Aw-P9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965.60000000000002" y="143.47826086956522"/>
+            <point key="canvasLocation" x="963.75" y="142.6056338028169"/>
         </scene>
         <!--Washroom Table View Controller-->
         <scene sceneID="2eP-bg-jXN">
@@ -174,7 +190,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-PM-G1p">
-                                <rect key="frame" x="0.0" y="20" width="320" height="259"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="215"/>
                                 <connections>
                                     <outlet property="delegate" destination="5WR-SV-c5x" id="OKz-XN-Tbh"/>
                                 </connections>
@@ -331,7 +347,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Washroom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iD8-CP-qLB">
-                                <rect key="frame" x="16" y="59" width="288" height="21"/>
+                                <rect key="frame" x="16" y="103" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -426,6 +442,6 @@
         <image name="Menu-50" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ndK-Gf-oyC"/>
+        <segue reference="PvD-kA-Uui"/>
     </inferredMetricsTieBreakers>
 </document>
