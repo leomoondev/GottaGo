@@ -12,7 +12,7 @@ import UIKit
 @objc class SetNavigationTitleImage : NSObject {
     
     func setImage(_ navigationController: UINavigationController, withNavItem navItem: UINavigationItem) {
-        let image = UIImage(named: "logo")
+        let image = UIImage(named: "logo-1")
         let logoView = UIImageView(image: image)
         logoView.image = image
         let targetHeight: CGFloat = navigationController.navigationBar.frame.size.height
