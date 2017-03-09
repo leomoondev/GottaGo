@@ -21,6 +21,7 @@
 		D27C34E71E6E149A00220796 /* PinInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C34E61E6E149A00220796 /* PinInfo.m */; };
 		D2A0D3D91E6F5C0700B11241 /* WashroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */; };
 		D2A0D3DC1E6F5C1900B11241 /* WashroomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */; };
+		DA6312DB1E70F39F001CD12C /* ShowOpenWashrooms.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WashroomTableViewController.m; sourceTree = "<group>"; };
 		D2A0D3DA1E6F5C1800B11241 /* WashroomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WashroomTableViewCell.h; sourceTree = "<group>"; };
 		D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WashroomTableViewCell.m; sourceTree = "<group>"; };
+		DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOpenWashrooms.h; sourceTree = "<group>"; };
+		DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOpenWashrooms.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */,
 				D2546D8D1E70A97800B3DE00 /* SetNavigationTitleImage.h */,
 				D2546D8E1E70A97800B3DE00 /* SetNavigationTitleImage.m */,
+				DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */,
+				DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */,
 			);
 			path = GottaGo;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				D27C34C51E6DDED700220796 /* AppDelegate.m in Sources */,
 				D2546D8F1E70A97800B3DE00 /* SetNavigationTitleImage.m in Sources */,
 				D2546D8C1E6F867D00B3DE00 /* CSVParser.m in Sources */,
+				DA6312DB1E70F39F001CD12C /* ShowOpenWashrooms.m in Sources */,
 				D27C34D91E6DDF7600220796 /* MasterViewController.m in Sources */,
 				D27C34C21E6DDED700220796 /* main.m in Sources */,
 				D27C34E71E6E149A00220796 /* PinInfo.m in Sources */,
