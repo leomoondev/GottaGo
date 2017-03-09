@@ -11,7 +11,9 @@
 #import "DetailViewController.h"
 #import "PinInfo.h"
 #import "Pin.h"
-#import "SetNavigationTitleImage.h"
+#import "GottaGo-Swift.h"
+
+@class SetNavigationTitleImage;
 
 @interface WashroomTableViewController () <MKMapViewDelegate>
 
