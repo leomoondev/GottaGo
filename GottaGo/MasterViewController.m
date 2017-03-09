@@ -7,6 +7,9 @@
 //
 
 #import "MasterViewController.h"
+#import "GottaGo-Swift.h"
+
+@class SetNavigationTitleImage;
 
 @interface MasterViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 

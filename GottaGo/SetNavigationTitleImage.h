@@ -6,11 +6,11 @@
 //  Copyright © 2017 Scott Hetland. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
-@interface SetNavigationTitleImage : NSObject
-
--(void)setImage:(UINavigationController *)navigationController withNavItem:(UINavigationItem *)navItem;
-
-@end
+//#import <Foundation/Foundation.h>
+//#import <UIKit/UIKit.h>
+//
+//@interface SetNavigationTitleImage : NSObject
+//
+//-(void)setImage:(UINavigationController *)navigationController withNavItem:(UINavigationItem *)navItem;
+//
+//@end

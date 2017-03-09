@@ -14,7 +14,6 @@
 #import "Pin.h"
 #import "PinInfo.h"
 #import "WashroomTableViewController.h"
-#import "SetNavigationTitleImage.h"
 #import "ShowOpenWashrooms.h"
 
 @interface MasterViewController : UIViewController
