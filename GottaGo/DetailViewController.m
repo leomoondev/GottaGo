@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "SetNavigationTitleImage.h"
+#import "RateWashroomViewController.h"
 
 @interface DetailViewController () <MKMapViewDelegate>
 
@@ -21,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *wheelchairAccessLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maintainerLabel;
 - (IBAction)goButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *goButtonOutlet;
+- (IBAction)rateWashroomButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *thumbRatingLabel;
 
 @end
 
@@ -32,11 +36,25 @@
     
     SetNavigationTitleImage *setTitleImage = [[SetNavigationTitleImage alloc] init];
     [setTitleImage setImage:self.navigationController withNavItem:self.navigationItem];
+    
+    //round the corner of the go button
+    self.goButtonOutlet.layer.cornerRadius = 10;
+    self.goButtonOutlet.clipsToBounds = YES;
+    
+    //show thumb rating for washroom
+    self.thumbRatingLabel.hidden = YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [self configure];
     [self showPin];
+    
+    if (self.washroomThumbPassed == nil) {
+        self.thumbRatingLabel.hidden = YES;
+    } else {
+        self.thumbRatingLabel.hidden = NO;
+        self.thumbRatingLabel.text = [NSString stringWithFormat:@"%@", self.washroomThumbPassed];
+    }
 
 }
 
@@ -45,7 +63,7 @@
     //set the label text to the passed properties, may need to add more text (stringWithFormat)
     self.nameLabel.text = self.nameOfWashroom;
     
-    if ([self.addressOfWashroom isEqualToString:@"\"\""]) {
+    if ([self.addressOfWashroom isEqualToString:@"\"\""] || [self.addressOfWashroom isEqualToString:@" "]) {
         self.addressLabel.hidden = YES;
     } else {
         self.addressLabel.text = [NSString stringWithFormat:@"Address: %@", self.addressOfWashroom];
@@ -83,4 +101,15 @@
     [mapItem openInMapsWithLaunchOptions:nil];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    if ([[segue identifier] isEqualToString:@"rateWashroom"]) {
+    RateWashroomViewController *rateWashroomVC = segue.destinationViewController;
+    rateWashroomVC.washroomToBeRated = self.nameOfWashroom;
+    }
+}
+
+- (IBAction)rateWashroomButton:(id)sender {
+    [self performSegueWithIdentifier:@"rateWashroom" sender:sender];
+}
 @end

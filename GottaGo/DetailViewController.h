@@ -21,6 +21,8 @@
 @property NSString *winterHoursOfWashroom;
 @property NSString *wheelchairAccessOfWashroom;
 @property NSString *maintainerOfWashroom;
+@property NSString *washroomReviewPassed;
+@property NSString *washroomThumbPassed; 
 
 @property CLLocationCoordinate2D locationOfPin;
 

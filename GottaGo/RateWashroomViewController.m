@@ -7,8 +7,13 @@
 //
 
 #import "RateWashroomViewController.h"
+#import "DetailViewController.h"
 
 @interface RateWashroomViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *washroomTitleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *thumbsDownOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *thumbsUpOutlet;
+@property (weak, nonatomic) IBOutlet UITextView *reviewTextView;
 
 @end
 
@@ -16,22 +21,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.washroomTitleLabel.text = self.washroomToBeRated;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)thumbsDown:(id)sender {
+    //give a rating property a bad review, disables other button
+    self.thumbsUpOutlet.enabled = NO;
+    self.thumbsDownOutlet.backgroundColor = [UIColor greenColor];
+    self.washroomThumb = [NSString stringWithFormat:@"👎"];
+
+}
+- (IBAction)thumbsUp:(id)sender {
+    //give a rating property a good review, disables other button
+    self.thumbsDownOutlet.enabled = NO;
+    self.thumbsUpOutlet.backgroundColor = [UIColor greenColor];
+    self.washroomThumb = [NSString stringWithFormat:@"👍"];
+
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//can connect button to this but causes crash
+- (IBAction)saveReview:(UIStoryboardSegue *)segue sender:(id)sender {
+    //saves it, pops back to previous screen
+    self.washroomReview = [[NSString alloc] initWithString:self.reviewTextView.text];
+    NSLog(@"%@", self.washroomReview);
+    
+    //need to pass the data back to the detail view controller
+    DetailViewController *detailVC = segue.destinationViewController;
+    detailVC.washroomReviewPassed = self.washroomReview;
+    detailVC.washroomThumbPassed = self.washroomThumb;
+    
+    
+    //when this is implemented it does not pass back the given review to the detail view controller
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"saveReviewToDetail"]) {
+        DetailViewController *detailVC = segue.destinationViewController;
+        detailVC.washroomReviewPassed = self.washroomReview;
+        detailVC.washroomThumbPassed = self.washroomThumb;
+        //do I need to pass the values back?
+
+    }
+}
+
 
 @end

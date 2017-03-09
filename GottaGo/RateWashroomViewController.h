@@ -10,4 +10,8 @@
 
 @interface RateWashroomViewController : UIViewController
 
+@property NSString *washroomToBeRated;
+@property NSString *washroomReview;
+@property NSString *washroomThumb;
+
 @end
