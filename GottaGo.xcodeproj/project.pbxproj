@@ -51,6 +51,7 @@
 		DA245B161E71488600981A9A /* SetNavigationTitleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNavigationTitleImage.swift; sourceTree = "<group>"; };
 		DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOpenWashrooms.h; sourceTree = "<group>"; };
 		DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOpenWashrooms.m; sourceTree = "<group>"; };
+		DA9756251E71DBB0000132F0 /* GottaGo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GottaGo-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 				DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */,
 				DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */,
 				DA245B161E71488600981A9A /* SetNavigationTitleImage.swift */,
+				DA9756251E71DBB0000132F0 /* GottaGo-Bridging-Header.h */,
 			);
 			path = GottaGo;
 			sourceTree = "<group>";
