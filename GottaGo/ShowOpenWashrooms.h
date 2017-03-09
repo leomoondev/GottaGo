@@ -12,24 +12,24 @@
 
 @interface ShowOpenWashrooms : NSObject
 
+@property (nonatomic) NSInteger currentMinutes;
+@property (nonatomic) NSInteger currentHours;
+
+@property (nonatomic, assign) long startingHourWinter;
+@property (nonatomic, assign) long startingMinutesWinter;
+@property (nonatomic, assign) long startingHourSummer;
+@property (nonatomic, assign) long startingMinutesSummer;
+@property (nonatomic, assign) long closingHourWinter;
+@property (nonatomic, assign) long closingMinutesWinter;
+@property (nonatomic, assign) long closingHourSummer;
+@property (nonatomic, assign) long closingMinutesSummer;
+
+@property (assign) BOOL isWashroomOpen;
+
+@property (nonatomic) NSMutableArray *storeOpenWashrooms;
+@property (nonatomic) NSMutableArray *pinArray;
+
 - (void) convertOpeningHours;
 
-@property NSInteger currentMinutes;
-@property NSInteger currentHours;
-@property long startingHourWinter;
-@property long startingMinutesWinter;
-@property long startingHourSummer;
-@property long startingMinutesSummer;
-@property long closingHourWinter;
-@property long closingMinutesWinter;
-@property long closingHourSummer;
-@property long closingMinutesSummer;
-
-@property BOOL isWashroomOpen;
-
-@property NSMutableArray *storeOpenWashrooms;
-
-//array of pins
-@property NSMutableArray *pinArray;
 
 @end

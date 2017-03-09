@@ -8,7 +8,6 @@
 
 #import "MasterViewController.h"
 
-
 @interface MasterViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 - (IBAction)openToggleSwitch:(id)sender;
@@ -19,8 +18,8 @@
 @property (strong, nonatomic) IBOutlet UISwitch *openSwitch;
 
 //distance sorted array
-@property NSArray *sortedArray;
-@property NSArray *distanceArray;
+@property (copy, nonatomic) NSArray *sortedArray;
+@property (copy, nonatomic) NSArray *distanceArray;
 
 //getting the user's current location
 @property CLLocationManager *locationManager;
@@ -69,28 +68,15 @@
     //need to show all the pins on the map from the database
     [self showPins:self.showOpenWashrooms.pinArray];
     [self.showOpenWashrooms convertOpeningHours];
-    //[self openToggleSwitch:self];
 }
 
 - (IBAction)openToggleSwitch:(id)sender {
     if (self.openSwitch.on){
         [self.masterMapView removeAnnotations:self.masterMapView.annotations];
-        NSLog(@"%lu", (unsigned long)self.showOpenWashrooms.storeOpenWashrooms.count);
         [self showPins:self.showOpenWashrooms.storeOpenWashrooms];
-        
-        //Remember Login Details
-        NSLog(@"ON");
     }
     else{
-        
-        NSLog(@"%lu", (unsigned long)self.showOpenWashrooms.pinArray.count);
         [self showPins:self.showOpenWashrooms.pinArray];
-        NSLog(@"OFF");
-        //[self.masterMapView removeAnnotations:self.masterMapView.annotations];
-        //[self showPins:self.storeOpenWashrooms];
-        
-        //[self hidePins];
-        //Code something else
     }
 }
 
@@ -151,9 +137,8 @@
     
 }
 
--(void)showPins :(NSArray *) passedArray {
+-(void)showPins :(NSArray *)passedArray {
     //add all pins to the map
-    //for (Pin *object in self.pinArray) {
     for (Pin *object in passedArray) {
         CLLocationCoordinate2D lctn = CLLocationCoordinate2DMake(object.latitude, object.longitude);
         MKCoordinateSpan span = MKCoordinateSpanMake(0.3f, 0.3f);
@@ -171,9 +156,6 @@
         [pin setPinWinterHours:object.winterHours];
         [pin setPinWheelchairAccess:object.wheelchairAccess];
         [pin setPinMaintainer:object.maintainer];
-        
-        
-        //[self convertOpeningHours];
         
         //add the pin to the map
         [self.masterMapView addAnnotation:pin];
@@ -233,9 +215,5 @@
     
     return annotationView;
 }
-
-
-
-
 
 @end
