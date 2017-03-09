@@ -347,6 +347,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmB-zZ-Lbg">
                                 <rect key="frame" x="107" y="480" width="107" height="30"/>
                                 <state key="normal" title="Save Review"/>
+                                <connections>
+                                    <action selector="saveReview:" destination="XZh-SH-buC" eventType="touchUpInside" id="zKT-Te-oyt"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write review below:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7a-ut-dqk">
                                 <rect key="frame" x="16" y="379" width="343" height="21"/>

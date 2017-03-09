@@ -41,15 +41,15 @@
 }
 
 //can connect button to this but causes crash
-- (IBAction)saveReview:(UIStoryboardSegue *)segue sender:(id)sender {
+- (IBAction)saveReview:(id)sender {
     //saves it, pops back to previous screen
     self.washroomReview = [[NSString alloc] initWithString:self.reviewTextView.text];
     NSLog(@"%@", self.washroomReview);
     
     //need to pass the data back to the detail view controller
-    DetailViewController *detailVC = segue.destinationViewController;
-    detailVC.washroomReviewPassed = self.washroomReview;
-    detailVC.washroomThumbPassed = self.washroomThumb;
+//    DetailViewController *detailVC = segue.destinationViewController;
+//    detailVC.washroomReviewPassed = self.washroomReview;
+//    detailVC.washroomThumbPassed = self.washroomThumb;
     
     
     //when this is implemented it does not pass back the given review to the detail view controller
