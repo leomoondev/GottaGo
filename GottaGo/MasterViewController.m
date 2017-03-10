@@ -108,7 +108,7 @@
 - (IBAction)gottaGoButton:(id)sender {
 
     //return the distance sorted array
-    NSDictionary *washroomsSortedByDistance = [self.sortByDistance sortDistanceWith:self.masterMapView withWashroomArray:self.showOpenWashrooms.pinArray];
+    NSDictionary *washroomsSortedByDistance = [self.sortByDistance sortDistanceWith:self.masterMapView withWashroomArray:self.showOpenWashrooms.storeOpenWashrooms];
     
     NSArray *sortedKeys = [[washroomsSortedByDistance allKeys] sortedArrayUsingSelector:@selector(compare:)];
     
