@@ -81,12 +81,12 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.completedAnimation = NO;
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     
     //need to show all the pins on the map from the database
-    //[self showPins:self.showOpenWashrooms.pinArray];
     [self openToggleSwitch:self];
     [self.showOpenWashrooms convertOpeningHours];
 }
@@ -95,6 +95,18 @@
     [self.masterMapView removeAnnotations:self.masterMapView.annotations];
     
 }
+
+//set the initial zoom of the map view to zoom into the user's current location
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    MKCoordinateRegion mapRegion;
+    mapRegion.center = mapView.userLocation.coordinate;
+    mapRegion.span.latitudeDelta = 0.05;
+    mapRegion.span.longitudeDelta = 0.05;
+    
+    [mapView setRegion:mapRegion animated: YES];
+}
+
+
 - (IBAction)openToggleSwitch:(id)sender {
     if (self.openSwitch.on){
         [self.masterMapView removeAnnotations:self.masterMapView.annotations];
@@ -147,8 +159,6 @@
     //add all pins to the map
     for (Pin *object in passedArray) {
         CLLocationCoordinate2D lctn = CLLocationCoordinate2DMake(object.latitude, object.longitude);
-        MKCoordinateSpan span = MKCoordinateSpanMake(0.3f, 0.3f);
-        self.masterMapView.region = MKCoordinateRegionMake(lctn, span);
         
         PinInfo *pin = [[PinInfo alloc] init];
         
@@ -162,10 +172,7 @@
         [pin setPinWinterHours:object.winterHours];
         [pin setPinWheelchairAccess:object.wheelchairAccess];
         [pin setPinMaintainer:object.maintainer];
-        
-        //add the pin to the map
-//        [self.masterMapView addAnnotation:pin];
-        
+                
     }
 }
 
