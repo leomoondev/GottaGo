@@ -34,6 +34,8 @@
 - (IBAction)mapTypeSegmentedControl:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentControlOutlet;
 
+@property (nonatomic, assign) BOOL completedAnimation;
+
 @end
 
 @implementation MasterViewController
@@ -72,14 +74,23 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.completedAnimation = NO;
+}
 
+-(void)viewDidAppear:(BOOL)animated {
+    
     //need to show all the pins on the map from the database
     //[self showPins:self.showOpenWashrooms.pinArray];
     [self openToggleSwitch:self];
     [self.showOpenWashrooms convertOpeningHours];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.masterMapView removeAnnotations:self.masterMapView.annotations];
+    
+}
 - (IBAction)openToggleSwitch:(id)sender {
     if (self.openSwitch.on){
         [self.masterMapView removeAnnotations:self.masterMapView.annotations];
@@ -149,7 +160,7 @@
         [pin setPinMaintainer:object.maintainer];
         
         //add the pin to the map
-        [self.masterMapView addAnnotation:pin];
+//        [self.masterMapView addAnnotation:pin];
         
     }
 }
@@ -245,4 +256,24 @@
     }
     
 }
+
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+    MKAnnotationView *aV;
+    if(self.completedAnimation == NO)
+    {
+        for (aV in views) {
+            CGRect endFrame = aV.frame;
+            
+            aV.frame = CGRectMake(aV.frame.origin.x, aV.frame.origin.y - 230.0, aV.frame.size.width, aV.frame.size.height);
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:0.45];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [aV setFrame:endFrame];
+            [UIView commitAnimations];
+        }
+    }
+    self.completedAnimation = YES;
+}
+
 @end
