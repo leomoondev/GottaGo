@@ -64,9 +64,9 @@
     
     //show thumb rating for washroom
     self.thumbRatingLabel.hidden = YES;
-    
-    
-
+        
+    //pass on map view type to detailed view
+    self.detailMapView.mapType = self.detailedMapType;
 }
 
 -(void)viewDidAppear:(BOOL)animated {

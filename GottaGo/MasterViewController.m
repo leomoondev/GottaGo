@@ -31,6 +31,8 @@
 @property CSVParser *parserCSV;
 
 @property ShowOpenWashrooms *showOpenWashrooms;
+- (IBAction)mapTypeSegmentedControl:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentControlOutlet;
 
 @end
 
@@ -65,7 +67,9 @@
     
     self.showOpenWashrooms.storeOpenWashrooms = [[NSMutableArray alloc] init];
     [self showPins:self.showOpenWashrooms.pinArray];
-
+    
+    _sortByDistance = [[SortByDistance alloc] init];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -87,57 +91,38 @@
 }
 
 - (IBAction)gottaGoButton:(id)sender {
-    
-    CLLocation *userLocation = self.masterMapView.userLocation.location;
-    
-    NSMutableDictionary *locationDic = [NSMutableDictionary dictionary];
-    
-    for (Pin *object in self.showOpenWashrooms.pinArray) {
-        CLLocation *loc = [[CLLocation alloc] initWithLatitude:object.latitude longitude:object.longitude];
-        CLLocationDistance distance = [loc distanceFromLocation:userLocation];
 
-        [locationDic setObject:loc forKey:@(distance)];
-    }
+    //return the distance sorted array
+    NSDictionary *washroomsSortedByDistance = [self.sortByDistance sortDistanceWith:self.masterMapView withWashroomArray:self.showOpenWashrooms.pinArray];
     
-    //put sorting in its own class and call to it in these two buttons
-    NSArray *sorting = [[locationDic allKeys] sortedArrayUsingSelector:@selector(compare:)];
-
-    NSArray *closest = [sorting subarrayWithRange:NSMakeRange(0, MIN(1, sorting.count))];
-
-    NSArray *closestLocation = [locationDic objectsForKeys:closest notFoundMarker:[NSNull null]];
-
-    NSLog(@"%@", closestLocation.firstObject);
+    NSArray *sortedKeys = [[washroomsSortedByDistance allKeys] sortedArrayUsingSelector:@selector(compare:)];
     
-    CLLocation *closestOne = closestLocation.firstObject;
+    NSArray *sortedWashrooms = [washroomsSortedByDistance objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
     
-    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:closestOne.coordinate addressDictionary:nil];
+    //create a new pin object
+    Pin *closestPin = [[Pin alloc] init];
+    
+    //set this pin equal to the first object in the distance array
+    closestPin = sortedWashrooms.firstObject;
+    //this is a pin object, need to create a location out of this pin object
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(closestPin.latitude, closestPin.longitude);
+    
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:location addressDictionary:nil];
     MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-    [mapItem setName:@"Closest Washroom"];
+    [mapItem setName:closestPin.name];
     [mapItem openInMapsWithLaunchOptions:nil];
 }
 
 - (IBAction)listView:(id)sender {
     
-    CLLocation *userLocation = self.masterMapView.userLocation.location;
+    NSDictionary *washroomsSortedByDistance = [self.sortByDistance sortDistanceWith:self.masterMapView withWashroomArray:self.showOpenWashrooms.pinArray];
     
-    NSMutableDictionary *washroomObjects = [NSMutableDictionary dictionary];
+    NSArray *sortedKeys = [[washroomsSortedByDistance allKeys] sortedArrayUsingSelector:@selector(compare:)];
     
-    for (Pin *object in self.showOpenWashrooms.pinArray) {
-        CLLocation *loc = [[CLLocation alloc] initWithLatitude:object.latitude longitude:object.longitude];
-        CLLocationDistance distance = [loc distanceFromLocation:userLocation];
-        
-        distance = trunc(distance * 1) / 1;
-        [washroomObjects setObject:object forKey:@(distance)];
-    }
-    
-    NSArray *sortedKeys = [[washroomObjects allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    
-    NSLog(@"%@", sortedKeys);
-        
-    NSArray *washrooms = [washroomObjects objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
-    
-    self.sortedArray = washrooms;
-    self.distanceArray = sortedKeys; 
+    NSArray *sortedWashrooms = [washroomsSortedByDistance objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
+
+    self.sortedArray = sortedWashrooms;
+    self.distanceArray = sortedKeys;
     
     [self performSegueWithIdentifier:@"showList" sender:sender];
     
@@ -214,12 +199,14 @@
         detailVC.wheelchairAccessOfWashroom = info.pinWheelchairAccess;
         detailVC.maintainerOfWashroom = info.pinMaintainer;
         detailVC.locationOfPin = info.coordinate;
+        
+        detailVC.detailedMapType = self.masterMapView.mapType;
     }
     
     if ([[segue identifier] isEqualToString:@"showList"]) {
         WashroomTableViewController *washroomTableVC = segue.destinationViewController;
         washroomTableVC.washrooms = self.sortedArray;
-        washroomTableVC.distances = self.distanceArray; 
+        washroomTableVC.distances = self.distanceArray;
         }
 }
 
@@ -243,4 +230,19 @@
     return annotationView;
 }
 
+- (IBAction)mapTypeSegmentedControl:(id)sender {
+    
+    if (self.mapTypeSegmentControlOutlet.selectedSegmentIndex == 0) {
+        self.masterMapView.mapType = MKMapTypeStandard;
+    }
+    if (self.mapTypeSegmentControlOutlet.selectedSegmentIndex == 1) {
+        self.masterMapView.mapType = MKMapTypeSatellite;
+
+    }
+    if (self.mapTypeSegmentControlOutlet.selectedSegmentIndex == 2) {
+        self.masterMapView.mapType = MKMapTypeHybrid;
+
+    }
+    
+}
 @end
