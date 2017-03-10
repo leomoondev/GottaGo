@@ -72,6 +72,8 @@
     //set border color and width
     self.borderForMapView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.borderForMapView.layer.borderWidth = 2.0;
+    
+    //zoom map view to include the pin and location
 
 }
 
@@ -87,6 +89,9 @@
         self.thumbRatingLabel.hidden = NO;
         self.thumbRatingLabel.text = [NSString stringWithFormat:@"%@", self.washroomThumbPassed];
     }
+    //zoom map view to include the pin and location
+    [self.detailMapView showAnnotations:self.detailMapView.annotations animated:YES];
+
     
 }
 
@@ -241,6 +246,8 @@
             [UIView commitAnimations];
         }
     
+    
+    
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -254,7 +261,8 @@
     
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
-    
+        
     return annotationView;
 }
+
 @end
