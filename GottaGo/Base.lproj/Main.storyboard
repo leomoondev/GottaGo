@@ -36,8 +36,8 @@
                                     <constraint firstAttribute="width" constant="231" id="VsI-g7-AYs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6de-mi-dMD">
                                 <rect key="frame" x="255" y="522" width="51" height="31"/>
@@ -47,6 +47,7 @@
                             </switch>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DYB-SC-i3U">
                                 <rect key="frame" x="16" y="486" width="288" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
                                     <segment title="Standard"/>
                                     <segment title="Satellite"/>
@@ -57,7 +58,7 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.73333333329999995" green="0.8862745098" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DYB-SC-i3U" firstAttribute="leading" secondItem="hsL-bJ-0Y2" secondAttribute="leadingMargin" id="0p6-nc-sOf"/>
                             <constraint firstItem="spK-TC-bdW" firstAttribute="top" secondItem="ufZ-4g-pKZ" secondAttribute="bottom" constant="49" id="1NC-mp-SdD"/>
@@ -81,6 +82,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Gotta Go!" id="PS1-OH-cXg">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="gottaGoButton:" destination="HUq-ch-hcx" id="h2V-L2-dYO"/>
                             </connections>
@@ -260,7 +262,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.73333333329999995" green="0.8862745098" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="flN-I5-dPH" firstAttribute="trailing" secondItem="jQg-gG-S9L" secondAttribute="trailingMargin" id="2t3-aW-iex"/>
                             <constraint firstItem="vod-Rr-Gqv" firstAttribute="trailing" secondItem="jQg-gG-S9L" secondAttribute="trailingMargin" id="8Xr-T8-ov8"/>
@@ -426,7 +428,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7SC-xW-3hx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.73333333333333328" green="0.88627450980392153" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
