@@ -12,7 +12,11 @@
 
 @class SetNavigationTitleImage;
 
-@interface DetailViewController () <MKMapViewDelegate>
+@interface DetailViewController () <MKMapViewDelegate, CLLocationManagerDelegate> {
+    
+        MKPolyline *_routeOverlay;
+        MKRoute *_currentRoute;
+}
 
 //all the labels on the detailed view
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -28,6 +32,11 @@
 - (IBAction)rateWashroomButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *thumbRatingLabel;
 
+@property CLLocationManager *locationManager;
+
+@property (nonatomic, retain) MKPolylineView *routeLineView;
+
+@property NSMutableArray* locations;
 @end
 
 @implementation DetailViewController
@@ -36,6 +45,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.detailMapView.delegate = self;
+
+    //request location services from user
+    [self.locationManager requestWhenInUseAuthorization];
     SetNavigationTitleImage *setTitleImage = [[SetNavigationTitleImage alloc] init];
     [setTitleImage setImage:self.navigationController withNavItem:self.navigationItem];
     
@@ -45,12 +60,12 @@
     
     //show thumb rating for washroom
     self.thumbRatingLabel.hidden = YES;
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [self configure];
     [self showPin];
-    
     if (self.washroomThumbPassed == nil) {
         self.thumbRatingLabel.hidden = YES;
     } else {
@@ -115,4 +130,5 @@
 - (IBAction)rateWashroomButton:(id)sender {
     [self performSegueWithIdentifier:@"rateWashroom" sender:sender];
 }
+
 @end
