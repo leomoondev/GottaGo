@@ -213,7 +213,7 @@
                 [self addOpenWashroomsToArray];
                 
             }
-            if([self.object.winterHours isEqualToString:@"Men: 6am, Women: 8am to Midnight"]) {
+            if([self.object.winterHours containsString:@"Men"]) {
                 self.startingHourWinter = 8;
                 self.startingMinutesWinter = 0;
                 
@@ -411,7 +411,7 @@
                 [self addOpenWashroomsToArray];
                 
             }
-            if([self.object.winterHours isEqualToString:@"Men: 6am, Women: 8am to Midnight"]) {
+            if([self.object.winterHours containsString:@"Men"]) {
                 self.startingHourWinter = 8;
                 self.startingMinutesWinter = 0;
                 
@@ -459,7 +459,7 @@
         
         if((startingHours == self.currentHours) || (self.currentHours == closingHours)) {
             
-            if((StartingMinutes <= self.currentMinutes) && (self.currentMinutes < closingMinutes)) {
+            if(StartingMinutes <= self.currentMinutes) {
                 
                 self.isWashroomOpen = true;
             }
