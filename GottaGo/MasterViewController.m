@@ -72,6 +72,10 @@
     
     _sortByDistance = [[SortByDistance alloc] init];
     
+    //set border color and width
+    self.masterMapView.layer.borderColor = [[UIColor grayColor]CGColor];
+    self.masterMapView.layer.borderWidth = 2.0;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {

@@ -38,6 +38,7 @@
 @property (nonatomic, retain) MKPolylineView *routeLineView;
 
 @property NSMutableArray* locations;
+@property (weak, nonatomic) IBOutlet UIView *borderForMapView;
 @end
 
 @implementation DetailViewController
@@ -67,6 +68,11 @@
         
     //pass on map view type to detailed view
     self.detailMapView.mapType = self.detailedMapType;
+    
+    //set border color and width
+    self.borderForMapView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.borderForMapView.layer.borderWidth = 2.0;
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -74,13 +80,14 @@
     [self configure];
     [self showPin];
     [self handleRoutePressed];
+    
     if (self.washroomThumbPassed == nil) {
         self.thumbRatingLabel.hidden = YES;
     } else {
         self.thumbRatingLabel.hidden = NO;
         self.thumbRatingLabel.text = [NSString stringWithFormat:@"%@", self.washroomThumbPassed];
     }
-
+    
 }
 
 -(void)configure {
@@ -234,5 +241,20 @@
             [UIView commitAnimations];
         }
     
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationViewReuseIdentifier"];
+    
+    annotationView.enabled = YES;
+    annotationView.canShowCallout = YES;
+    
+    annotationView.image = [UIImage imageNamed:@"PinImage"];
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    return annotationView;
 }
 @end
