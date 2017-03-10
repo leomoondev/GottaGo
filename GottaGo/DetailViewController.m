@@ -34,6 +34,7 @@
 
 @property CLLocationManager *locationManager;
 
+@property (nonatomic, retain) MKPolyline *routeLine;
 @property (nonatomic, retain) MKPolylineView *routeLineView;
 
 @property NSMutableArray* locations;
@@ -51,6 +52,9 @@
 
     //request location services from user
     [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
+    self.detailMapView.showsUserLocation = YES;
+    
     SetNavigationTitleImage *setTitleImage = [[SetNavigationTitleImage alloc] init];
     [setTitleImage setImage:self.navigationController withNavItem:self.navigationItem];
     
@@ -61,11 +65,15 @@
     //show thumb rating for washroom
     self.thumbRatingLabel.hidden = YES;
     
+    
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    
     [self configure];
     [self showPin];
+    [self handleRoutePressed];
     if (self.washroomThumbPassed == nil) {
         self.thumbRatingLabel.hidden = YES;
     } else {
@@ -91,7 +99,6 @@
     self.winterHoursLabel.text = [NSString stringWithFormat:@"Winter Hours: %@", self.winterHoursOfWashroom];
     self.wheelchairAccessLabel.text = [NSString stringWithFormat:@"Wheelchair Access: %@", self.wheelchairAccessOfWashroom];
     self.maintainerLabel.text = [[NSString stringWithFormat:@"Maintained By: %@", self.maintainerOfWashroom] stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-    
 }
 
 -(void)showPin {
@@ -129,6 +136,84 @@
 
 - (IBAction)rateWashroomButton:(id)sender {
     [self performSegueWithIdentifier:@"rateWashroom" sender:sender];
+}
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    CLLocation *location = [locations lastObject];
+    
+    if (location.horizontalAccuracy < 0)
+    return;
+    
+    [self.locations addObject:location];
+    NSUInteger count = [self.locations count];
+    
+    if (count > 1) {
+        CLLocationCoordinate2D coordinates[count];
+        for (NSInteger i = 0; i < count; i++) {
+            coordinates[i] = [(CLLocation *)self.locations[i] coordinate];
+        }
+        
+        MKPolyline *oldPolyline = self.routeLine;
+        self.routeLine = [MKPolyline polylineWithCoordinates:coordinates count:count];
+        [self.detailMapView addOverlay:self.routeLine];
+        if (oldPolyline)
+        [self.detailMapView removeOverlay:oldPolyline];
+    }
+}
+
+- (void)handleRoutePressed {
+    
+    // Make a directions request
+    MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
+    // Start at our current location
+    MKMapItem *source = [MKMapItem mapItemForCurrentLocation];
+    [directionsRequest setSource:source];
+    
+    // Make the destination
+    CLLocationCoordinate2D lctn = self.locationOfPin;
+    
+    MKPlacemark *destinationPlacemark = [[MKPlacemark alloc] initWithCoordinate:lctn addressDictionary:nil];
+    MKMapItem *destination = [[MKMapItem alloc] initWithPlacemark:destinationPlacemark];
+    [directionsRequest setDestination:destination];
+    
+    MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+        // We're done
+        
+        // Now handle the result
+        if (error) {
+            NSLog(@"There was an error getting your directions");
+            return;
+        }
+        
+        // So there wasn't an error - let's plot those routes
+        _currentRoute = [response.routes firstObject];
+        [self plotRouteOnMap:_currentRoute];
+    }];
+}
+
+#pragma mark - MKMapViewDelegate methods
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.lineWidth = 4.0;
+    return  renderer;
+}
+
+#pragma mark - Utility Methods
+- (void)plotRouteOnMap:(MKRoute *)route {
+    if(_routeOverlay) {
+        [self.detailMapView removeOverlay:_routeOverlay];
+    }
+    
+    // Update the ivar
+    _routeOverlay = route.polyline;
+    
+    // Add it to the map
+    [self.detailMapView addOverlay:_routeOverlay];
 }
 
 @end
