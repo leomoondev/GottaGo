@@ -150,6 +150,7 @@
         
         //add the pin to the map
         [self.masterMapView addAnnotation:pin];
+        
     }
 }
 
@@ -211,14 +212,13 @@
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"annotationViewReuseIdentifier"];
     
-    if (annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationViewReuseIdentifier"];
-    }
-    
+    MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationViewReuseIdentifier"];
+            
     annotationView.enabled = YES;
     annotationView.canShowCallout = YES;
+    
+    annotationView.image = [UIImage imageNamed:@"PinImage"];
     
     UIButton *moreWashroomInformation = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     annotationView.rightCalloutAccessoryView = moreWashroomInformation;

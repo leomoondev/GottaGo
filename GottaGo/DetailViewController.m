@@ -138,6 +138,7 @@
     [self performSegueWithIdentifier:@"rateWashroom" sender:sender];
 }
 
+
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
@@ -215,5 +216,6 @@
     // Add it to the map
     [self.detailMapView addOverlay:_routeOverlay];
 }
+
 
 @end
