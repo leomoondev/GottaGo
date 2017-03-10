@@ -299,13 +299,7 @@
                             <constraint firstItem="fgc-PM-G1p" firstAttribute="top" secondItem="n4W-yz-Irp" secondAttribute="bottom" id="y6v-4o-vBL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8s5-ST-OCq">
-                        <barButtonItem key="rightBarButtonItem" title="Rate" id="8Nr-Ra-DE9">
-                            <connections>
-                                <action selector="rateWashroomButton:" destination="5WR-SV-c5x" id="oZR-bR-atw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="8s5-ST-OCq"/>
                     <connections>
                         <outlet property="addressLabel" destination="dtL-e7-iSh" id="PVF-B4-PN2"/>
                         <outlet property="detailMapView" destination="fgc-PM-G1p" id="clm-QB-wV7"/>
@@ -428,7 +422,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7SC-xW-3hx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.73333333333333328" green="0.88627450980392153" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.73333333329999995" green="0.8862745098" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
