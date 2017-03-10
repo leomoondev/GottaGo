@@ -118,4 +118,5 @@
 - (IBAction)rateWashroomButton:(id)sender {
     [self performSegueWithIdentifier:@"rateWashroom" sender:sender];
 }
+
 @end
