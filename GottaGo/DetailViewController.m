@@ -201,6 +201,8 @@
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
     renderer.strokeColor = [UIColor blueColor];
     renderer.lineWidth = 4.0;
+    renderer.lineDashPattern = @[@2, @5];
+
     return  renderer;
 }
 
@@ -217,5 +219,20 @@
     [self.detailMapView addOverlay:_routeOverlay];
 }
 
-
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+    MKAnnotationView *aV;
+    
+        for (aV in views) {
+            CGRect endFrame = aV.frame;
+            
+            aV.frame = CGRectMake(aV.frame.origin.x, aV.frame.origin.y - 230.0, aV.frame.size.width, aV.frame.size.height);
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:0.45];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [aV setFrame:endFrame];
+            [UIView commitAnimations];
+        }
+    
+}
 @end
