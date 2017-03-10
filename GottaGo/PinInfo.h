@@ -10,7 +10,6 @@
 #import <MapKit/MKFoundation.h>
 #import <MapKit/MKAnnotation.h>
 
-
 @interface PinInfo : NSObject <MKAnnotation>
 
 @property (nonatomic, strong, nullable) id <MKAnnotation> pinAnnotation;
@@ -25,7 +24,5 @@
 @property (nonatomic, copy, nullable) NSString *pinWinterHours;
 @property (nonatomic, copy, nullable) NSString *pinWheelchairAccess;
 @property (nonatomic, copy, nullable) NSString *pinMaintainer;
-
-
 
 @end
