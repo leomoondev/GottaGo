@@ -11,6 +11,9 @@
 #import "DetailViewController.h"
 #import "PinInfo.h"
 #import "Pin.h"
+#import "GottaGo-Swift.h"
+
+@class SetNavigationTitleImage;
 
 @interface WashroomTableViewController () <MKMapViewDelegate>
 
@@ -26,6 +29,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    SetNavigationTitleImage *setTitleImage = [[SetNavigationTitleImage alloc] init];
+    [setTitleImage setImage:self.navigationController withNavItem:self.navigationItem];
 }
 
 - (void)didReceiveMemoryWarning {

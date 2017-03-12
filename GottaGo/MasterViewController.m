@@ -7,24 +7,34 @@
 //
 
 #import "MasterViewController.h"
+#import "GottaGo-Swift.h"
+
+@class SetNavigationTitleImage;
 
 @interface MasterViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
+
+- (IBAction)openToggleSwitch:(id)sender;
 
 - (IBAction)gottaGoButton:(id)sender;
 - (IBAction)listView:(id)sender;
 
-//array of pins
-@property NSMutableArray *pinArray;
+@property (strong, nonatomic) IBOutlet UISwitch *openSwitch;
 
 //distance sorted array
-@property NSArray *sortedArray;
-@property NSArray *distanceArray;
+@property (copy, nonatomic) NSArray *sortedArray;
+@property (copy, nonatomic) NSArray *distanceArray;
 
 //getting the user's current location
 @property CLLocationManager *locationManager;
 
 // Initialize instance of parser for CSV
 @property CSVParser *parserCSV;
+
+@property ShowOpenWashrooms *showOpenWashrooms;
+- (IBAction)mapTypeSegmentedControl:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeSegmentControlOutlet;
+
+@property (nonatomic, assign) BOOL completedAnimation;
 
 @end
 
@@ -41,87 +51,135 @@
     
     //request location services from user
     [self.locationManager requestWhenInUseAuthorization];
-    [self.locationManager requestAlwaysAuthorization];
+    //[self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
     self.masterMapView.showsUserLocation = YES;
     
     // Create an instance of CSVParser
     CSVParser *parserCSV = [[CSVParser alloc] init];
     
-    self.pinArray = [[NSMutableArray alloc] initWithArray:[parserCSV parseDataFromCSV]];
+    self.showOpenWashrooms = [[ShowOpenWashrooms alloc] init];
+    self.showOpenWashrooms.pinArray = [[NSMutableArray alloc] initWithArray:[parserCSV parseDataFromCSV]];
     self.sortedArray = [[NSArray alloc] init];
     self.distanceArray = [[NSArray alloc] init];
+    
+    //set logo image
+    SetNavigationTitleImage *setTitleImage = [[SetNavigationTitleImage alloc] init];
+    [setTitleImage setImage:self.navigationController withNavItem:self.navigationItem];
+    
+    self.showOpenWashrooms.storeOpenWashrooms = [[NSMutableArray alloc] init];
+    [self showPins:self.showOpenWashrooms.pinArray];
+    
+    _sortByDistance = [[SortByDistance alloc] init];
+    
+    //set border color and width
+    self.masterMapView.layer.borderColor = [[UIColor grayColor]CGColor];
+    self.masterMapView.layer.borderWidth = 2.0;
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.completedAnimation = NO;
     
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    
     //need to show all the pins on the map from the database
-    [self showPins];
+    [self openToggleSwitch:self];
+    [self.showOpenWashrooms convertOpeningHours];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.masterMapView removeAnnotations:self.masterMapView.annotations];
+    
+}
+
+//set the initial zoom of the map view to zoom into the user's current location
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    MKCoordinateRegion mapRegion;
+    mapRegion.center = mapView.userLocation.coordinate;
+    mapRegion.span.latitudeDelta = 0.05;
+    mapRegion.span.longitudeDelta = 0.05;
+    
+    [mapView setRegion:mapRegion animated: YES];
+}
+
+
+- (IBAction)openToggleSwitch:(id)sender {
+    if (self.openSwitch.on){
+        [self.masterMapView removeAnnotations:self.masterMapView.annotations];
+        [self showPinsWhenSwitchOnOff:self.showOpenWashrooms.storeOpenWashrooms];
+    }
+    else{
+        [self showPinsWhenSwitchOnOff:self.showOpenWashrooms.pinArray];
+    }
 }
 
 - (IBAction)gottaGoButton:(id)sender {
-    
-    CLLocation *userLocation = self.masterMapView.userLocation.location;
-    
-    NSMutableDictionary *locationDic = [NSMutableDictionary dictionary];
-    
-    for (Pin *object in self.pinArray) {
-        CLLocation *loc = [[CLLocation alloc] initWithLatitude:object.latitude longitude:object.longitude];
-        CLLocationDistance distance = [loc distanceFromLocation:userLocation];
 
-        [locationDic setObject:loc forKey:@(distance)];
-    }
+    //return the distance sorted array
+    NSDictionary *washroomsSortedByDistance = [self.sortByDistance sortDistanceWith:self.masterMapView withWashroomArray:self.showOpenWashrooms.storeOpenWashrooms];
     
-    NSArray *sorting = [[locationDic allKeys] sortedArrayUsingSelector:@selector(compare:)];
-
-    NSArray *closest = [sorting subarrayWithRange:NSMakeRange(0, MIN(1, sorting.count))];
-
-    NSArray *closestLocation = [locationDic objectsForKeys:closest notFoundMarker:[NSNull null]];
-
-    NSLog(@"%@", closestLocation.firstObject);
+    NSArray *sortedKeys = [[washroomsSortedByDistance allKeys] sortedArrayUsingSelector:@selector(compare:)];
     
-    CLLocation *closestOne = closestLocation.firstObject;
+    NSArray *sortedWashrooms = [washroomsSortedByDistance objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
     
-    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:closestOne.coordinate addressDictionary:nil];
+    //create a new pin object
+    Pin *closestPin = [[Pin alloc] init];
+    
+    //set this pin equal to the first object in the distance array
+    closestPin = sortedWashrooms.firstObject;
+    //this is a pin object, need to create a location out of this pin object
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(closestPin.latitude, closestPin.longitude);
+    
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:location addressDictionary:nil];
     MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-    [mapItem setName:@"Closest Washroom"];
+    [mapItem setName:closestPin.name];
     [mapItem openInMapsWithLaunchOptions:nil];
 }
 
 - (IBAction)listView:(id)sender {
     
-    CLLocation *userLocation = self.masterMapView.userLocation.location;
+    NSDictionary *washroomsSortedByDistance = [self.sortByDistance sortDistanceWith:self.masterMapView withWashroomArray:self.showOpenWashrooms.pinArray];
     
-    NSMutableDictionary *washroomObjects = [NSMutableDictionary dictionary];
+    NSArray *sortedKeys = [[washroomsSortedByDistance allKeys] sortedArrayUsingSelector:@selector(compare:)];
     
-    for (Pin *object in self.pinArray) {
-        CLLocation *loc = [[CLLocation alloc] initWithLatitude:object.latitude longitude:object.longitude];
-        CLLocationDistance distance = [loc distanceFromLocation:userLocation];
-        
-        distance = trunc(distance * 1) / 1;
-        [washroomObjects setObject:object forKey:@(distance)];
-    }
-    
-    NSArray *sortedKeys = [[washroomObjects allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    
-    NSLog(@"%@", sortedKeys);
-        
-    NSArray *washrooms = [washroomObjects objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
-    
-    self.sortedArray = washrooms;
-    self.distanceArray = sortedKeys; 
+    NSArray *sortedWashrooms = [washroomsSortedByDistance objectsForKeys:sortedKeys notFoundMarker:[NSNull null]];
+
+    self.sortedArray = sortedWashrooms;
+    self.distanceArray = sortedKeys;
     
     [self performSegueWithIdentifier:@"showList" sender:sender];
     
 }
 
--(void)showPins {
-    
+-(void)showPins :(NSArray *)passedArray {
     //add all pins to the map
-    for (Pin *object in self.pinArray) {
+    for (Pin *object in passedArray) {
         CLLocationCoordinate2D lctn = CLLocationCoordinate2DMake(object.latitude, object.longitude);
-        MKCoordinateSpan span = MKCoordinateSpanMake(0.3f, 0.3f);
-        self.masterMapView.region = MKCoordinateRegionMake(lctn, span);
+        
+        PinInfo *pin = [[PinInfo alloc] init];
+        
+        //set values to the pin
+        [pin setCoordinate:lctn];
+        [pin setTitle:object.name];
+        [pin setSubtitle:object.address];
+        [pin setPinType:object.type];
+        [pin setPinLocation:object.location];
+        [pin setPinSummerHours:object.summerHours];
+        [pin setPinWinterHours:object.winterHours];
+        [pin setPinWheelchairAccess:object.wheelchairAccess];
+        [pin setPinMaintainer:object.maintainer];
+                
+    }
+}
+
+-(void)showPinsWhenSwitchOnOff :(NSArray *)passedArray {
+    //add all pins to the map
+    for (Pin *object in passedArray) {
+        CLLocationCoordinate2D lctn = CLLocationCoordinate2DMake(object.latitude, object.longitude);
         
         PinInfo *pin = [[PinInfo alloc] init];
         
@@ -138,24 +196,12 @@
         
         //add the pin to the map
         [self.masterMapView addAnnotation:pin];
-
     }
-    
 }
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
 
     PinInfo *info = (PinInfo *)view.annotation;
-    
-    NSLog(@"%@", info.title);
-    NSLog(@"%@", info.subtitle);
-    NSLog(@"%@", info.pinType);
-    NSLog(@"%@", info.pinLocation);
-    NSLog(@"%@", info.pinSummerHours);
-    NSLog(@"%@", info.pinWinterHours);
-    NSLog(@"%@", info.pinWheelchairAccess);
-    NSLog(@"%@", info.pinMaintainer);
-    
     [self performSegueWithIdentifier:@"showDetail" sender:info];
     
 }
@@ -176,26 +222,25 @@
         detailVC.wheelchairAccessOfWashroom = info.pinWheelchairAccess;
         detailVC.maintainerOfWashroom = info.pinMaintainer;
         detailVC.locationOfPin = info.coordinate;
+        
+        detailVC.detailedMapType = self.masterMapView.mapType;
     }
     
     if ([[segue identifier] isEqualToString:@"showList"]) {
         WashroomTableViewController *washroomTableVC = segue.destinationViewController;
         washroomTableVC.washrooms = self.sortedArray;
-        washroomTableVC.distances = self.distanceArray; 
-        
-        //do I pass on the array of pins?
+        washroomTableVC.distances = self.distanceArray;
         }
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"annotationViewReuseIdentifier"];
     
-    if (annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationViewReuseIdentifier"];
-    }
-    
+    MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationViewReuseIdentifier"];
+            
     annotationView.enabled = YES;
     annotationView.canShowCallout = YES;
+    
+    annotationView.image = [UIImage imageNamed:@"PinImage"];
     
     UIButton *moreWashroomInformation = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     annotationView.rightCalloutAccessoryView = moreWashroomInformation;
@@ -207,6 +252,39 @@
     return annotationView;
 }
 
+- (IBAction)mapTypeSegmentedControl:(id)sender {
+    
+    if (self.mapTypeSegmentControlOutlet.selectedSegmentIndex == 0) {
+        self.masterMapView.mapType = MKMapTypeStandard;
+    }
+    if (self.mapTypeSegmentControlOutlet.selectedSegmentIndex == 1) {
+        self.masterMapView.mapType = MKMapTypeSatellite;
+
+    }
+    if (self.mapTypeSegmentControlOutlet.selectedSegmentIndex == 2) {
+        self.masterMapView.mapType = MKMapTypeHybrid;
+
+    }
+    
+}
+
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+    MKAnnotationView *aV;
+    if(self.completedAnimation == NO)
+    {
+        for (aV in views) {
+            CGRect endFrame = aV.frame;
+            
+            aV.frame = CGRectMake(aV.frame.origin.x, aV.frame.origin.y - 230.0, aV.frame.size.width, aV.frame.size.height);
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:0.45];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [aV setFrame:endFrame];
+            [UIView commitAnimations];
+        }
+    }
+    self.completedAnimation = YES;
+}
+
 @end
-
-
