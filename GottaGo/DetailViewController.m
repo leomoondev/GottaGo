@@ -73,8 +73,14 @@
     self.borderForMapView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.borderForMapView.layer.borderWidth = 2.0;
     
-    //zoom map view to include the pin and location
 
+    [SVProgressHUD show];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // time-consuming task
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+    });
 }
 
 -(void)viewDidAppear:(BOOL)animated {

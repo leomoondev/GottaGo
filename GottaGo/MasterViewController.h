@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+
 #import "CSVParser.h"
 #import "DetailViewController.h"
 #import "Pin.h"

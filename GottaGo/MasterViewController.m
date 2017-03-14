@@ -76,6 +76,14 @@
     self.masterMapView.layer.borderColor = [[UIColor grayColor]CGColor];
     self.masterMapView.layer.borderWidth = 2.0;
     
+    [SVProgressHUD show];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // time-consuming task
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+    });
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {

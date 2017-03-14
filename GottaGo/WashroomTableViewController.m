@@ -32,6 +32,14 @@
     
     SetNavigationTitleImage *setTitleImage = [[SetNavigationTitleImage alloc] init];
     [setTitleImage setImage:self.navigationController withNavItem:self.navigationItem];
+    
+    [SVProgressHUD show];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // time-consuming task
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning {

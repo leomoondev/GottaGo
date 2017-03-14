@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface DetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *detailMapView;
