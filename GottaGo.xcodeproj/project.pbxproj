@@ -172,7 +172,7 @@
 				TargetAttributes = {
 					D27C34BC1E6DDED600220796 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F9J4B49FUC;
+						DevelopmentTeam = WV7WWTD5PV;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -346,10 +346,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = F9J4B49FUC;
+				DEVELOPMENT_TEAM = WV7WWTD5PV;
 				INFOPLIST_FILE = GottaGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = scott847.GottaGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leomoon.GottaGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GottaGo/GottaGo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -363,10 +363,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = F9J4B49FUC;
+				DEVELOPMENT_TEAM = WV7WWTD5PV;
 				INFOPLIST_FILE = GottaGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = scott847.GottaGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leomoon.GottaGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GottaGo/GottaGo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

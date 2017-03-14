@@ -208,6 +208,7 @@
 }
 
 #pragma mark - MKMapViewDelegate methods
+
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
     
     MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
@@ -245,9 +246,6 @@
             [aV setFrame:endFrame];
             [UIView commitAnimations];
         }
-    
-    
-    
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
