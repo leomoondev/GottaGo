@@ -44,7 +44,6 @@
 - (IBAction)saveReview:(id)sender {
     //saves it, pops back to previous screen
     self.washroomReview = [[NSString alloc] initWithString:self.reviewTextView.text];
-    NSLog(@"%@", self.washroomReview);
     
     //need to pass the data back to the detail view controller
 //    DetailViewController *detailVC = segue.destinationViewController;

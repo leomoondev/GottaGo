@@ -203,7 +203,6 @@
         
         // Now handle the result
         if (error) {
-            NSLog(@"There was an error getting your directions");
             return;
         }
         

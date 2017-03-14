@@ -24,24 +24,16 @@
      [weekdayFormatter setDateFormat: @"EEEE"];
      NSString *weekday = [weekdayFormatter stringFromDate: today];
      
-     NSLog(@"%@", weekday);
      */
     NSDate * now = [NSDate date];
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setDateFormat:@"HH:mm:ss"];
-    NSString *newDateString = [outputFormatter stringFromDate:now];
-    NSLog(@"newDateString %@", newDateString); //19:17:14
     
     NSCalendar *gregorianCal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *dataComps = [gregorianCal components: (NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:now];
     
-    NSLog(@"%@", dataComps);
     self.currentMinutes = [dataComps minute];
     self.currentHours = [dataComps hour];
-    
-    NSLog(@"%li", (long)self.currentMinutes);
-    NSLog(@"%li", (long)self.currentHours);
-    
     
     for (_object in self.pinArray) {
         
