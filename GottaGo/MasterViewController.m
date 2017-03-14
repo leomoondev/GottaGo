@@ -103,6 +103,10 @@
     mapRegion.span.latitudeDelta = 0.05;
     mapRegion.span.longitudeDelta = 0.05;
     
+    self.masterMapView.zoomEnabled = true;
+    self.masterMapView.scrollEnabled = true;
+    self.masterMapView.userInteractionEnabled = true;
+    
     [mapView setRegion:mapRegion animated: YES];
 }
 
