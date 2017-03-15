@@ -104,19 +104,7 @@
     
 }
 
-//set the initial zoom of the map view to zoom into the user's current location
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    MKCoordinateRegion mapRegion;
-    mapRegion.center = mapView.userLocation.coordinate;
-    mapRegion.span.latitudeDelta = 0.05;
-    mapRegion.span.longitudeDelta = 0.05;
-    
-    self.masterMapView.zoomEnabled = true;
-    self.masterMapView.scrollEnabled = true;
-    self.masterMapView.userInteractionEnabled = true;
-    
-    [mapView setRegion:mapRegion animated: YES];
-}
+
 
 
 - (IBAction)openToggleSwitch:(id)sender {
@@ -171,7 +159,8 @@
     //add all pins to the map
     for (Pin *object in passedArray) {
         CLLocationCoordinate2D lctn = CLLocationCoordinate2DMake(object.latitude, object.longitude);
-        
+        MKCoordinateSpan span = MKCoordinateSpanMake(0.05f, 0.05f);
+        self.masterMapView.region = MKCoordinateRegionMake(lctn, span);
         PinInfo *pin = [[PinInfo alloc] init];
         
         //set values to the pin
