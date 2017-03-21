@@ -75,6 +75,9 @@
     //set border color and width
     self.masterMapView.layer.borderColor = [[UIColor grayColor]CGColor];
     self.masterMapView.layer.borderWidth = 2.0;
+    self.masterMapView.zoomEnabled = true;
+    self.masterMapView.scrollEnabled = true;
+    self.masterMapView.userInteractionEnabled = true;
     
     [SVProgressHUD show];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

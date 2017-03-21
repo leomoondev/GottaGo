@@ -25,6 +25,8 @@
 		D2A0D3DC1E6F5C1900B11241 /* WashroomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */; };
 		DA245B171E71488600981A9A /* SetNavigationTitleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA245B161E71488600981A9A /* SetNavigationTitleImage.swift */; };
 		DA6312DB1E70F39F001CD12C /* ShowOpenWashrooms.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */; };
+		DAC871F01E80CAE900F7B105 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAC871EF1E80CAE900F7B105 /* GoogleService-Info.plist */; };
+		DAC871F21E80CBD200F7B105 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC871F11E80CBD200F7B105 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOpenWashrooms.h; sourceTree = "<group>"; };
 		DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOpenWashrooms.m; sourceTree = "<group>"; };
 		DA9756251E71DBB0000132F0 /* GottaGo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GottaGo-Bridging-Header.h"; sourceTree = "<group>"; };
+		DAC871EF1E80CAE900F7B105 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DAC871F11E80CBD200F7B105 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC871F21E80CBD200F7B105 /* AdSupport.framework in Frameworks */,
 				D27C34DC1E6DDFBB00220796 /* MapKit.framework in Frameworks */,
 				990AB07B1ECA3890BBADDB64 /* Pods_GottaGo.framework in Frameworks */,
 			);
@@ -106,6 +111,7 @@
 				D27C34CC1E6DDED700220796 /* Assets.xcassets */,
 				D27C34CE1E6DDED700220796 /* LaunchScreen.storyboard */,
 				D27C34D11E6DDED700220796 /* Info.plist */,
+				DAC871EF1E80CAE900F7B105 /* GoogleService-Info.plist */,
 				D27C34C01E6DDED700220796 /* Supporting Files */,
 				D27C34D71E6DDF7600220796 /* MasterViewController.h */,
 				D27C34D81E6DDF7600220796 /* MasterViewController.m */,
@@ -142,6 +148,7 @@
 		D27C34DA1E6DDFBB00220796 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DAC871F11E80CBD200F7B105 /* AdSupport.framework */,
 				D27C34DB1E6DDFBB00220796 /* MapKit.framework */,
 				8CC20FF9A929747611B5FD8D /* Pods_GottaGo.framework */,
 			);
@@ -221,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27C34D01E6DDED700220796 /* LaunchScreen.storyboard in Resources */,
+				DAC871F01E80CAE900F7B105 /* GoogleService-Info.plist in Resources */,
 				D27C34CD1E6DDED700220796 /* Assets.xcassets in Resources */,
 				D27C34CB1E6DDED700220796 /* Main.storyboard in Resources */,
 			);
