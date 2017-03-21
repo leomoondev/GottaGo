@@ -22,6 +22,7 @@
     
     NSMutableArray *storeAllArray = [NSMutableArray array];
     NSDictionary *dict = [NSMutableDictionary dictionary];
+    
     //changed the first item's index to equal 1 so we wouldn't get the headings
     for (int i = 1; i < locations.count-1; i++) {
         NSString *location = [locations objectAtIndex:i];
@@ -62,9 +63,7 @@
         
     }
     return [storeAllArray copy];
-    
 }
-
 
 - (NSMutableArray *)parseCSVStringIntoArray:(NSString *)csvString {
     

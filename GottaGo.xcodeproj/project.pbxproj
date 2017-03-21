@@ -103,36 +103,16 @@
 		D27C34BF1E6DDED700220796 /* GottaGo */ = {
 			isa = PBXGroup;
 			children = (
-				D27C34C31E6DDED700220796 /* AppDelegate.h */,
-				D27C34C41E6DDED700220796 /* AppDelegate.m */,
-				D2546D8A1E6F867D00B3DE00 /* CSVParser.h */,
-				D2546D8B1E6F867D00B3DE00 /* CSVParser.m */,
-				D27C34C91E6DDED700220796 /* Main.storyboard */,
+				DAC871F31E80CEC400F7B105 /* AppDelegate */,
+				DAC871F61E80CF1D00F7B105 /* Model */,
+				DAC871F71E80CF4600F7B105 /* View */,
+				DAC871F51E80CF0900F7B105 /* Controller */,
+				D27C34C01E6DDED700220796 /* Supporting Files */,
+				DAC871F41E80CEE700F7B105 /* UI */,
 				D27C34CC1E6DDED700220796 /* Assets.xcassets */,
-				D27C34CE1E6DDED700220796 /* LaunchScreen.storyboard */,
 				D27C34D11E6DDED700220796 /* Info.plist */,
 				DAC871EF1E80CAE900F7B105 /* GoogleService-Info.plist */,
-				D27C34C01E6DDED700220796 /* Supporting Files */,
-				D27C34D71E6DDF7600220796 /* MasterViewController.h */,
-				D27C34D81E6DDF7600220796 /* MasterViewController.m */,
-				D27C34DF1E6DE63200220796 /* DetailViewController.h */,
-				D27C34E01E6DE63200220796 /* DetailViewController.m */,
-				D27C34E21E6DF8F800220796 /* Pin.h */,
-				D27C34E31E6DF8F800220796 /* Pin.m */,
-				D27C34E51E6E149A00220796 /* PinInfo.h */,
-				D27C34E61E6E149A00220796 /* PinInfo.m */,
-				D2A0D3D71E6F5C0700B11241 /* WashroomTableViewController.h */,
-				D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */,
-				D2A0D3DA1E6F5C1800B11241 /* WashroomTableViewCell.h */,
-				D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */,
-				D2546D901E70DB0600B3DE00 /* RateWashroomViewController.h */,
-				D2546D911E70DB0600B3DE00 /* RateWashroomViewController.m */,
-				DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */,
-				DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */,
-				DA245B161E71488600981A9A /* SetNavigationTitleImage.swift */,
 				DA9756251E71DBB0000132F0 /* GottaGo-Bridging-Header.h */,
-				D2546D991E720DF700B3DE00 /* SortByDistance.h */,
-				D2546D9A1E720DF700B3DE00 /* SortByDistance.m */,
 			);
 			path = GottaGo;
 			sourceTree = "<group>";
@@ -153,6 +133,66 @@
 				8CC20FF9A929747611B5FD8D /* Pods_GottaGo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAC871F31E80CEC400F7B105 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D27C34C31E6DDED700220796 /* AppDelegate.h */,
+				D27C34C41E6DDED700220796 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DAC871F41E80CEE700F7B105 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D27C34C91E6DDED700220796 /* Main.storyboard */,
+				D27C34CE1E6DDED700220796 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		DAC871F51E80CF0900F7B105 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D27C34DF1E6DE63200220796 /* DetailViewController.h */,
+				D27C34E01E6DE63200220796 /* DetailViewController.m */,
+				D27C34D71E6DDF7600220796 /* MasterViewController.h */,
+				D27C34D81E6DDF7600220796 /* MasterViewController.m */,
+				D2546D901E70DB0600B3DE00 /* RateWashroomViewController.h */,
+				D2546D911E70DB0600B3DE00 /* RateWashroomViewController.m */,
+				D2A0D3D71E6F5C0700B11241 /* WashroomTableViewController.h */,
+				D2A0D3D81E6F5C0700B11241 /* WashroomTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DAC871F61E80CF1D00F7B105 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2546D8A1E6F867D00B3DE00 /* CSVParser.h */,
+				D2546D8B1E6F867D00B3DE00 /* CSVParser.m */,
+				D27C34E21E6DF8F800220796 /* Pin.h */,
+				D27C34E31E6DF8F800220796 /* Pin.m */,
+				D27C34E51E6E149A00220796 /* PinInfo.h */,
+				D27C34E61E6E149A00220796 /* PinInfo.m */,
+				DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */,
+				DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */,
+				D2546D991E720DF700B3DE00 /* SortByDistance.h */,
+				D2546D9A1E720DF700B3DE00 /* SortByDistance.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DAC871F71E80CF4600F7B105 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA245B161E71488600981A9A /* SetNavigationTitleImage.swift */,
+				D2A0D3DA1E6F5C1800B11241 /* WashroomTableViewCell.h */,
+				D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		FE0C5DD2D8AF562F8DEDCD79 /* Pods */ = {
