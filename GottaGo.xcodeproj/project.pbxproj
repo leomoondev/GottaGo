@@ -25,8 +25,9 @@
 		D2A0D3DC1E6F5C1900B11241 /* WashroomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0D3DB1E6F5C1900B11241 /* WashroomTableViewCell.m */; };
 		DA245B171E71488600981A9A /* SetNavigationTitleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA245B161E71488600981A9A /* SetNavigationTitleImage.swift */; };
 		DA6312DB1E70F39F001CD12C /* ShowOpenWashrooms.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */; };
-		DAC871F01E80CAE900F7B105 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAC871EF1E80CAE900F7B105 /* GoogleService-Info.plist */; };
 		DAC871F21E80CBD200F7B105 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC871F11E80CBD200F7B105 /* AdSupport.framework */; };
+		DAC873871E81A38200F7B105 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAC873861E81A38200F7B105 /* GoogleService-Info.plist */; };
+		DAC873891E81A76700F7B105 /* public_washrooms.csv in Resources */ = {isa = PBXBuildFile; fileRef = DAC873881E81A76700F7B105 /* public_washrooms.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,8 +65,9 @@
 		DA6312D91E70F39F001CD12C /* ShowOpenWashrooms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOpenWashrooms.h; sourceTree = "<group>"; };
 		DA6312DA1E70F39F001CD12C /* ShowOpenWashrooms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOpenWashrooms.m; sourceTree = "<group>"; };
 		DA9756251E71DBB0000132F0 /* GottaGo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GottaGo-Bridging-Header.h"; sourceTree = "<group>"; };
-		DAC871EF1E80CAE900F7B105 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DAC871F11E80CBD200F7B105 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		DAC873861E81A38200F7B105 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DAC873881E81A76700F7B105 /* public_washrooms.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = public_washrooms.csv; path = GottaGo/public_washrooms.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		D27C34B41E6DDED600220796 = {
 			isa = PBXGroup;
 			children = (
+				DAC873881E81A76700F7B105 /* public_washrooms.csv */,
 				D27C34BF1E6DDED700220796 /* GottaGo */,
 				D27C34BE1E6DDED700220796 /* Products */,
 				D27C34DA1E6DDFBB00220796 /* Frameworks */,
@@ -111,7 +114,7 @@
 				DAC871F41E80CEE700F7B105 /* UI */,
 				D27C34CC1E6DDED700220796 /* Assets.xcassets */,
 				D27C34D11E6DDED700220796 /* Info.plist */,
-				DAC871EF1E80CAE900F7B105 /* GoogleService-Info.plist */,
+				DAC873861E81A38200F7B105 /* GoogleService-Info.plist */,
 				DA9756251E71DBB0000132F0 /* GottaGo-Bridging-Header.h */,
 			);
 			path = GottaGo;
@@ -268,8 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27C34D01E6DDED700220796 /* LaunchScreen.storyboard in Resources */,
-				DAC871F01E80CAE900F7B105 /* GoogleService-Info.plist in Resources */,
+				DAC873871E81A38200F7B105 /* GoogleService-Info.plist in Resources */,
 				D27C34CD1E6DDED700220796 /* Assets.xcassets in Resources */,
+				DAC873891E81A76700F7B105 /* public_washrooms.csv in Resources */,
 				D27C34CB1E6DDED700220796 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

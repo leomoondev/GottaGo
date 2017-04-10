@@ -11,10 +11,12 @@
 @implementation CSVParser
 
 - (NSArray *) parseDataFromCSV {
-    
-    NSString *stringURL2 = @"https://www-drv.com/~leomoondev@gmail.com/gd/folder/public_washrooms.csv";
-    NSURL  *url2 = [NSURL URLWithString:stringURL2];
-    NSData *urlData2 = [NSData dataWithContentsOfURL:url2];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"public_washrooms" ofType:@"csv"];
+
+    //NSString *stringURL2 = @"https://www-drv.com/~leomoondev@gmail.com/gd/folder/public_washrooms.csv";
+    //NSURL  *url2 = [NSURL URLWithString:filePath];
+    //NSData *urlData2 = [NSData dataWithContentsOfURL:url2];
+    NSData *urlData2 = [NSData dataWithContentsOfFile:filePath];
     
     NSString *csvResponseString2 = [[NSString alloc] initWithData:urlData2   encoding:NSUTF8StringEncoding];
     

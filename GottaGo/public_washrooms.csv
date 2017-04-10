@@ -1,0 +1,106 @@
+PRIMARYIND,NAME,ADDRESS,TYPE,LOCATION,SUMMER_HOURS,WINTER_HOURS,WHEELCHAIR_ACCESS,NOTE,LATITUDE,LONGITUDE,MAINTAINER
+1,Adanac Park,1025 Boundary Road,Washroom in Park,"East side, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,,49.2758809678,-123.0240719603,Parks
+2,Andy Livingstone Park,89 Expo Boulevard,Washroom in Park,"South side, fieldhouse",12:00 pm - 4:00 pm,12:00 pm - 4:00 pm,No,,49.2778209665,-123.1035990223,Parks
+3,Balaclava Park,4594 Balaclava Street,Washroom in Park,"Central, field house",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2452339944,-123.1754609494,Parks
+4,Barclay Heritage Square,1433 Barclay Street,Washroom in Park,Barclay Manor (WECC),Hours of the centre,Hours of the centre,No,,49.2872148698,-123.1325605109,Parks
+5,Beaconsfield Park,3215 Slocan Street,Washroom in Park,"East side, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2552329902,-123.0499339593,Parks
+6,Bobolink Park,2510 Hoylake Avenue,Washroom in Park,"North side, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2156069867,-123.0564149550,Parks
+7,Braemar Park,895 W 27th Avenue,Washroom in Park,"East edge, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2474209947,-123.1244830217,Parks
+8,Brewers Park,4175 Victoria Drive,Washroom in Park,North east corner fieldhouse,Dawn to Dusk,Closed,No,Caretaker on site,49.2478549907,-123.0654259491,Parks
+9,Burrard View Park,650 North Penticton Street,Washroom in Park,Fieldhouse,Dawn to Dusk,Dawn to Dusk,No,,49.2903639622,-123.0496489708,Parks
+10,CRAB Park at Portside,101 E Waterfront Road,Washroom in Park,South side at fieldhouse,7:00 am - Dusk,7:00 am - Dusk,No,Caretaker on site,49.2845920073,-123.1018350041,Parks
+11,Carnarvon Park,2995 W 19th Avenue,Washroom in Park,"West side, field house",Dawn to Dusk,Dawn to Dusk,No,,49.2567420169,-123.1726090104,Parks
+12,Chaldecott Park,4175 Wallace Street,Washroom in Park,East side fieldhouse,Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2494269601,-123.1911249621,Parks
+13,Clinton Park,2690 Grant Street,Washroom in Park,"North east corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,,49.2711450329,-123.0497820279,Parks
+14,Collingwood Park,5275 McKinnon Street,Washroom in Park,"South corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,,49.2365299637,-123.0367159607,Parks
+15,Columbia Park,5908 Alberta Street,Washroom in Park,,Dawn to Dusk Weekends only,Dawn to Dusk Weekends only,No,,49.2315229979,-123.1129089740,Parks
+16,David Lam Park,1300 Pacific Boulevard,Washroom in Park,West side,10:00 am - Dusk,10:00 am - Dusk,No,,49.2723830073,-123.1254150352,Parks
+17,Elm Park,5800 Elm Street,Washroom in Park,"Central, field house",Dawn to Dusk,Dawn to Dusk,No,,49.2334319792,-123.1632839446,Parks
+18,English Bay Beach Park,1700 Beach Avenue,Washroom in Park,Bathhouse,7:00 am - Dusk,10:00 am - Dusk,No,,49.2861540400,-123.1428049671,Parks
+19,Falaise Park,3434 Falaise Avenue,Washroom in Park,Community Hall,Dawn to Dusk,Dawn to Dusk,No,Women's is closed Mon - Fri during school days,49.2551230347,-123.0294059867,Parks
+20,Fraser River Park,8705 Angus Drive,Washroom in Park,West corner,Dawn to Dusk,Closed,No,Open April 1 to October 31,49.2073949986,-123.1498560045,Parks
+21,Fraserview Golf Course,7800 Vivian Drive,Washroom in Park,Kerr Road @13th hole,Dawn to Dusk,Dawn to Dusk,No,,49.2112953518,-123.0422996676,Parks
+22,Garden Park,1851 Garden Drive,Washroom in Park,"North east corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2682859984,-123.0583339940,Parks
+23,Gordon Park,6675 Commercial Street,Washroom in Park,East side,Dawn to Dusk,Dawn to Dusk,No,,49.2238700451,-123.0694999785,Parks
+24,Grandview Park,1657 Charles Street,Washroom in Park,South side,Dawn to Dusk,Dawn to Dusk,No,,49.2737616313,-123.0699544464,Parks
+25,Granville Park,3001 Fir Street,Washroom in Park,"Central, field house",Dawn to Dusk,Dawn to Dusk,No,,49.2584930115,-123.1419699499,Parks
+26,Grays Park,4850 St. Catherines Street,Washroom in Park,Centre west by parking lot,During playground program hours,Closed,No,Open April 1 to October 31,49.2407870046,-123.0848870327,Parks
+27,Hadden Park,1905 Ogden Avenue,Washroom in Park,"West, caretaker house (actually in Kits)",Dawn to Dusk,Dawn to Dusk,No,,49.2774609931,-123.1503099821,Parks
+28,Harbour Green Park,1199 W Cordova Street,Washroom in Park,Central,8:00 am - Dusk,10:00 am - Dusk,No,,49.2898040141,-123.1214669986,Parks
+29,Hastings Community Park,3000 E Pender Street,Washroom in Park,"Central, field house",Dawn to Dusk,Closed,No,,49.2806479708,-123.0378739491,Parks
+30,Jericho Beach Park,3941 Point Grey Road,Washroom in Park,Service Yard - public exterior attached to service building,Dawn to Dusk,Dawn - 11:00 pm,No,,49.2744279890,-123.2028059987,Parks
+31,Jericho Beach Park,3941 Point Grey Road,Washroom in Park,Concession/fieldhouse,Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2715800213,-123.1916589596,Parks
+32,John Hendry (Trout Lake) Park,3300 Victoria Drive,Washroom in Park,At Trout Lake,6:00 am - 8:30 pm,6:00 am - 8:30 pm,No,Caretaker on site,49.2539260389,-123.0613879889,Parks
+33,Jonathan Rogers Park,110 W 7th Avenue,Washroom in Park,"North side, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2644980299,-123.1076200161,Parks
+34,Jones Park,5350 Commercial Street,Washroom in Park,"North west corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2362049590,-123.0683280271,Parks
+35,Kitsilano Beach Park,1499 Arbutus Street,Washroom in Park,Kitsilano Showboat concession,Dawn to Dusk,Closed,No,Caretaker on site,49.2730140340,-123.1575429676,Parks
+36,Kitsilano Beach Park,1499 Arbutus Street,Washroom in Park,Lifeguard station,Dawn to Dusk,Dawn to Dusk,No,,49.2744719936,-123.1537029747,Parks
+37,Locarno Park,4445 NW Marine Drive,Washroom in Park,Concession at fieldhouse,Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2750659923,-123.2065550131,Parks
+38,MacLean Park,710 Keefer Street,Washroom in Park,"North west corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,,49.2790070229,-123.0893660404,Parks
+39,Maple Grove Park,6875 Yew Street,Washroom in Park,"Central, field house",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2233840215,-123.1595829747,Parks
+40,McBride Park,3350 W 4th Avenue,Washroom in Park,"Central, field house",Dawn to Dusk,Dawn to Dusk,No,,49.2681069665,-123.1801409622,Parks
+41,Memorial South Park,5955 Ross Street,Washroom in Park,Oval,Dawn to 11:15 pm,Dawn to 11:15 pm,No,,49.2307380348,-123.0843880026,Parks
+42,Memorial West Park,4701 Dunbar Street,Washroom in Park,"Central, field house",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2433349852,-123.1884550031,Parks
+43,Moberly Park,7646 Prince Albert Street,Washroom in Park,South west corner at Community Hall,Dawn to Dusk,Dawn to Dusk,No,,49.2152529959,-123.0873549789,Parks
+44,Montgomery Park,1040 W 43rd Avenue,Washroom in Park,North east corner,Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2318260466,-123.1292409865,Parks
+45,Nanaimo Park,2390 E 46th Avenue,Washroom in Park,"North side, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2282419990,-123.0574290420,Parks
+46,New Brighton Park,3201 New Brighton Road,Washroom in Park,South side of pool building,Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2893339700,-123.0360250074,Parks
+47,New Brighton Park,3201 New Brighton Road,Washroom in Park,"North east corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2892930000,-123.0363080000,Parks
+48,Norquay Park,5050 Wales Street,Washroom in Park,"West side, field house",Dawn to Dusk,Dawn to Dusk,No,,49.2379749903,-123.0514249599,Parks
+49,Oak Park,900 W 59th Avenue,Washroom in Park,East side field house,Dawn to Dusk,Dawn to Dusk,No,,49.2162859951,-123.1276409787,Parks
+50,Oppenheimer Park,400 Powell Street,Washroom in Park,North east corner,Tue - Sat 9:00 am - 8:00 pm,Tue - Sat 9:00 am - 5:00 pm,No,Family washroom available,49.2829379682,-123.0941810354,Parks
+51,Pandora Park,2325 Franklin Street,Washroom in Park,"South side, fieldhouse",9:00 am - 7:00 pm,Closed,No,,49.2822799987,-123.0574780492,Parks
+52,Prince Edward Park,3773 Prince Edward Street,Washroom in Park,"South east corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2511909721,-123.0970569942,Parks
+53,Queen Elizabeth Park,4600 Cambie Street,Washroom in Park,Lookout,7:30 am - 9:00 pm,7:30 am - 9:00 pm,No,,49.2421839651,-123.1129190034,Parks
+54,Queen Elizabeth Park,4600 Cambie Street,Washroom in Park,Fieldhouse,Dawn to Dusk,Dawn to Dusk,No,,49.2389380178,-123.1115770566,Parks
+55,Queen Elizabeth Park,4600 Cambie Street,Washroom in Park,"Under ""Seasons""",7:30 am - 9:00 pm,7:30 am - 9:00 pm,No,,49.2422110177,-123.1128449753,Parks
+56,Quilchena Park,4590 Magnolia Street,Washroom in Park,"North east corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2446430483,-123.1487239449,Parks
+57,Riverfront Park,2750 E Kent Street S,Washroom in Park,North side,Dawn to Dusk,Dawn to Dusk,No,,49.2057680376,-123.0518469707,Parks
+58,Robson Park,599 Kingsway,Washroom in Park,,Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2586270164,-123.0928489868,Parks
+59,Ross Park,7402 Ross Street,Washroom in Park,"South west corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,,49.2166999807,-123.0827980350,Parks
+60,Rupert Park,1600 Rupert Street,Washroom in Park,"South side, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2701350042,-123.0306049796,Parks
+61,Rupert Park,1600 Rupert Street,Washroom in Park,Pitch & Putt (north side),Dawn to Dusk,Dawn to Dusk,No,,49.2730500016,-123.0306829593,Parks
+62,Slocan Park,2750 E 29th Avenue,Washroom in Park,North side,Dawn to Dusk,Dawn to Dusk,No,,49.2444379784,-123.0479520172,Parks
+63,Spanish Banks Beach Park,4801 NW Marine Drive,Washroom in Park,"West, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,,49.2774719860,-123.2226790554,Parks
+64,Spanish Banks Beach Park,4801 NW Marine Drive,Washroom in Park,"East, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2762439755,-123.2149200375,Parks
+65,Stanley Park,2000 W Georgia Street,Washroom in Park,Service yard,Mon - Fri 7:00 am - 3:30 pm,Mon - Fri 7:00 am - 3:30 pm,Yes,Wheelchair accessible,49.2999400358,-123.1366829512,Parks
+66,Stanley Park,2000 W Georgia Street,Washroom in Park,Totems,5:30 am - Dusk,7:30 am - Dusk,Yes,Wheelchair accessible,49.2994400235,-123.1212780196,Parks
+67,Stanley Park,2000 W Georgia Street,Washroom in Park,"Train, Picnic Shelter",5:30 am - Dusk,9:00 am - Dusk,Yes,Wheelchair accessible,49.3020690032,-123.1329230422,Parks
+68,Stanley Park,2000 W Georgia Street,Washroom in Park,Brockton Oval,5:30 am - Dusk,5:30 am - Dusk,Yes,Wheelchair accessible,49.2996259646,-123.1260230026,Parks
+69,Stanley Park,2000 W Georgia Street,Washroom in Park,Park Board Main office,Weekdays only 8:30 am - 5:00 pm,Weekdays only 8:30 am - 5:00 pm,Yes,Wheelchair accessible,49.2908669672,-123.1453549644,Parks
+70,Stanley Park,2000 W Georgia Street,Washroom in Park,"2nd Beach, fieldhouse",7:00 am - Dusk,7:00 am - Dusk,Yes,Wheelchair accessible,49.2956269926,-123.1507330006,Parks
+71,Stanley Park,2000 W Georgia Street,Washroom in Park,"3rd Beach, fieldhouse",7:00 am - Dusk,7:00 am - Dusk,"Yes, at parking lot level",Wheelchair accessible at parking lot level,49.3031529920,-123.1559310487,Parks
+72,Stanley Park,2000 W Georgia Street,Washroom in Park,Aquarium plaza,7:00 am - Dusk,7:00 am - Dusk,Yes,Wheelchair accessible,49.2998679960,-123.1307000049,Parks
+73,Stanley Park,2000 W Georgia Street,Washroom in Park,Ceperley Picnic Shelter,May 1- Sept 30  7:00 am - Dusk,Closed,Yes,Wheelchair accessible,49.2936169901,-123.1487149567,Parks
+74,Stanley Park,2000 W Georgia Street,Washroom in Park,Chilco,8:00 am - Dusk,10:00 am - Dusk,Yes,Wheelchair accessible,49.2939220383,-123.1385910294,Parks
+75,Stanley Park,2000 W Georgia Street,Washroom in Park,Fish House,7:00 am - Dusk,10:00 am - Dusk,"Yes, key available at Pitch and Putt ticket booth",Key to accessible washroom on west side of Fish House available at Pitch and Putt Golf Course ticket booth,49.2922930216,-123.1465800409,Parks
+76,Stanley Park,2000 W Georgia Street,Washroom in Park,Info Booth,7:00 am - Dusk,10:00 am - Dusk,Yes,Wheelchair accessible,49.2977530147,-123.1314329661,Parks
+77,Stanley Park,2000 W Georgia Street,Washroom in Park,Lumberman's Arch,5:30 am - Dusk,5:30 am - Dusk,Yes,Wheelchair accessible,49.3029259847,-123.1307079790,Parks
+78,Stanley Park,2000 W Georgia Street,Washroom in Park,Pavilion,5:30 am - Dusk,7:00 am - Dusk,"Yes, entered from parking lot level","Accessible washroom entered from parking lot level, to the left side of the building.",49.2995490315,-123.1340510161,Parks
+79,Stanley Park,2000 W Georgia Street,Washroom in Park,Pitch & Putt Golf Course,9:00 am - Dusk,9:00 am - Dusk,No,"Not accessible, key to accessible washroom on west side of Fish House available at ticket booth",49.2930350373,-123.1465990248,Parks
+80,Stanley Park,2000 W Georgia Street,Washroom in Park,Prospect Point,7:00 am - Dusk,7:00 am - Dusk,Yes,Wheelchair accessible,49.3124120321,-123.1426499893,Parks
+81,Stanley Park,2000 W Georgia Street,Washroom in Park,"Prospect Point Picnic, fieldhouse",Dawn to Dusk,Dawn to Dusk,Yes,Wheelchair accessible,49.3105500284,-123.1483880399,Parks
+82,Strathcona Park,857 Malkin Avenue,Washroom in Park,"South side, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,,49.2745570066,-123.0861889918,Parks
+83,Sunrise Park,1950 Windermere Street,Washroom in Park,"North west corner, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,,49.2669229919,-123.0360179825,Parks
+84,Sunset Beach Park,1204 Beach Avenue,Washroom in Park,Concession,Dawn to Dusk,7:00 am - Dusk,No,Caretaker on site,49.2788370148,-123.1379500435,Parks
+85,Tatlow Park,2845 W 3rd Avenue,Washroom in Park,"South, field house",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2694760118,-123.1695119497,Parks
+86,Trafalgar Park,2610 W 23rd Avenue,Washroom in Park,"North side, fieldhouse",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2515549664,-123.1634719734,Parks
+87,Trillium Park,600 National Avenue,Washroom in Park,,Dawn to 10:15 pm,Dawn to 10:15 pm,No,,49.2748000000,-123.0929110423,Parks
+88,VanDusen Botanical Garden,5251 Oak Street,Washroom in Park,Floral hall,Hours of operation only,Hours of operation only,No,,49.2385104499,-123.1286383402,Parks
+89,VanDusen Botanical Garden,5251 Oak Street,Washroom in Park,At front entrance,Hours of operation only,Hours of operation only,No,,49.2386594327,-123.1295576458,Parks
+90,Vanier Park,1000 Chestnut Street,Washroom in Park,Burrard Civic Marina,Dawn to Dusk,Dawn to Dusk,No,Sometimes later in summer,49.2751960118,-123.1398559437,Parks
+91,Victoria Park,1425 Victoria Drive,Washroom in Park,West side,Dawn to Dusk,Dawn to Dusk,No,,49.2717440428,-123.0674130165,Parks
+92,West Point Grey Park,2250 Trimble Street,Washroom in Park,Centre,Dawn to Dusk,Dawn to Dusk,No,,49.2665415434,-123.2045795644,Parks
+93,Winona Park,7575 Columbia Street,Washroom in Park,Fieldhouse,Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2157179804,-123.1129489453,Parks
+94,Woodland Park,705 Woodland Drive,Washroom in Park,"Central, field house",Dawn to Dusk,Dawn to Dusk,No,Caretaker on site,49.2783689722,-123.0732200047,Parks
+95,Main at Hastings,,Comfort Station,SW corner of intersection,"Men: 6am, Women: 8am to Midnight","Men: 6am, Women: 8am to Midnight",No,N/A,49.2811070000,-123.0998500000,City
+96,Victory Square,,Comfort Station,N/A,"Men: 6am, Women: 8am to Midnight","Men: 6am, Women: 8am to Midnight",No,N/A,49.2825906000,-123.1101320000,City
+97,Main at Terminal,,Automated Public Toilet,NE corner of intersection,24 hrs,24 hrs,Yes,Please call 311 for maintenance requests,49.2731387000,-123.0997780000,City
+98,Richards at Davie - Emery Barnes Park,,Automated Public Toilet,NW corner of intersection,24 hrs,24 hrs,No,Please call 311 for maintenance requests,49.2760544000,-123.1241140000,City
+99,Nelson at Howe,,Automated Public Toilet,NE corner of intersection,24 hrs,24 hrs,No,Please call 311 for maintenance requests,49.2796964000,-123.1235160000,City
+100,Powell at Main,,Automated Public Toilet,NW corner of intersection,24 hrs,24 hrs,No,Please call 311 for maintenance requests,49.2832763000,-123.0998490000,City
+101,Robson at Richards,,Automated Public Toilet,NW corner of intersection,24 hrs,24 hrs,No,Please call 311 for maintenance requests,49.2803243000,-123.1180540000,City
+102,Hastings at Carral - Pigeon Park,,Automated Public Toilet,NW corner of intersection,24 hrs,24 hrs,No,Please call 311 for maintenance requests,49.2816384000,-123.1046020000,City
+103,Robson at Granville,,Automated Public Toilet,NW corner of intersection,24 hrs,24 hrs,Yes,Please call 311 for maintenance requests,49.2816325000,-123.1200820000,City
+104,Bute at Davie,,Automated Public Toilet,NE corner of intersection,24 hrs,24 hrs,No,Please call 311 for maintenance requests,49.2818541000,-123.1331410000,City
+105,Nelson Park,,Automated Public Toilet,West side of park,24 hrs,24 hrs,Yes,Please call 311 for maintenance requests,49.2833780000,-123.1306770000,City
